@@ -13,12 +13,10 @@
 # Sobre o projeto / Levantamento de requisitos
 Projeto visa um sistema web de pedidos para uma lanchonete fictícia chamada Laraburguer. Será possível montar pedidos, adicioná-los ao carrinho e efetuar a compra. 
 
-A aplicação possuirá um front-end chamativo contendo informações sobre a lanchonte e os produtos oferecidos. O cliente poderá fazer os seus pedidos dentro da própria aplicação, e poderá também mandar uma mensagem para o whatsapp business da empresa solicitando atendimento. 
-
-Caso o cliente opte por fazer o pedido dentro da própria plataforma ele precisará se cadastrar na aplicação para efetuar a compra. Além disso o dono da Laraburguer terá acesso restrito ao backend da aplicação, visualizando um dashboard com as informações de vendas da lanchonete e os pedidos a serem feitos.
+A aplicação possuirá um front-end contendo informações sobre a lanchonte e os produtos oferecidos. 
 
 ## Conteúdos
-Front-end contendo informações da empresa
+Frontend contendo informações da empresa
 
 * Página inicial com
    * história da empresa
@@ -53,6 +51,59 @@ Front-end contendo informações da empresa
    * os itens do pedido
    * valor total a ser pago
 
+* Pagina de pedidos feitos contendo
+   * todos os pedidos que o cliente já fez 
+   * detalhes do pedido
+      * produtos 
+      * preços pagos
+   * status dos pedidos feitos
+
+O cliente poderá fazer os seus pedidos dentro da própria aplicação, e poderá também mandar uma mensagem para o whatsapp business da empresa solicitando atendimento. 
+
+Caso o cliente opte por fazer o pedido dentro da própria plataforma ele precisará se cadastrar na aplicação para efetuar a compra. Além disso o dono da Laraburguer terá acesso restrito ao backend da aplicação, visualizando um dashboard com as informações de vendas da lanchonete e os pedidos a serem feitos.
+ 
+### Analytics
+O dashboard conterá dados dos valores arrecadados juntamente com o numero de pedidos, podendo filtrar por mês, ano ou dia. 
+
+O dashboarda também apresentará a quantidade de vezes que cada produto foi vendido e o valor total que ele arrecadou.
+
+### Produtos
+No dashboard o administrador poderá cadastrar, editar e excluir produtos. Esses produtos que serão os mostrados no frontend da aplicação.
+
+### Pedidos
+O pedido será recebido e mostrado no painel em uma aba específica, em que o administrador poderá avisar sobre o novo pedido. O pedido já chega com o status "Em aberto"
+Por parte do backend, o pedido poderá ter seus status modificado para "Em execução", "Cancelado", "Rota de entrega" e "Concluído". Se o pedido for cancelado, uma mensagem de justificativa deverá ser criada. Todos esses status estarão visíveis para o usuário no frontend.
+O cliente só poderá fazer um pedido se a lanchonete estiver aberta no momento em que o pedido for efetivado. 
+
+
+## Tabelas
+Clientes - users
+   * nome
+   * sobrenome
+   * email
+   * endereco
+   * senha
+
+Administradores
+   * nome
+   * sobrenome
+   * email
+   * endereco
+   * senha
+
+Pedidos
+   * produto
+   * cliente
+   * valor
+   * data
+   * status
+   * quantidade
+
+Produtos
+   * fotos
+   * ingredientes, se aplicáveis
+   * preço
+   * alguma descrição, se necessário
 
 
 ---
