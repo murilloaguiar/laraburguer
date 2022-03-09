@@ -15,7 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->string('status',45)->default('Em aberto');
+            $table->float('total',5,2)->nullable();
             $table->timestamps();
+
+            $table->foreignId('users_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

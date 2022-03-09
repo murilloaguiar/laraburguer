@@ -6,26 +6,28 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateEstablishmentsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('establishments', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+   /**
+    * Run the migrations.
+    *
+    * @return void
+    */
+   public function up()
+   {
+      Schema::create('establishments', function (Blueprint $table) {
+         $table->id();
+         $table->string('name',50);
+         $table->integer('open');
+         $table->timestamps();
+      });
+   }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('establishments');
-    }
+   /**
+    * Reverse the migrations.
+    *
+    * @return void
+    */
+   public function down()
+   {
+      Schema::dropIfExists('establishments');
+   }
 }
