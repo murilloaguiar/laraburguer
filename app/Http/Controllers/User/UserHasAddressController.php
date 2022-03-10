@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Models\UserHasAddress;
 use App\Http\Requests\StoreUserHasAddressRequest;
 use App\Http\Requests\UpdateUserHasAddressRequest;
