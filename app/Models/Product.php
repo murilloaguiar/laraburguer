@@ -7,5 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory;
+   use HasFactory;
+
+   public function productDetail(){
+      return $this->hasOne('App\Models\ProductDetail');
+   }
+
+   public function category(){
+      return $this->belongsTo('App\Models\Category');
+   }
+
+   public function orders(){
+      return $this->belongsToMany('App\Models\Order', 'product_has_orders', 'product_id', 'order_id');
+   }
+   
 }
