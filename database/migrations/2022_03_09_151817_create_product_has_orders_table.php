@@ -14,8 +14,15 @@ class CreateProductHasOrdersTable extends Migration
     public function up()
     {
         Schema::create('product_has_orders', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger('products_id');
+            $table->unsignedInteger('orders_id');
+            $table->integer('quantidade');
             $table->timestamps();
+
+            $table->primary(['products_id', 'orders_id']);
+
+            $table->foreign('products_id')->references('id')->on('products')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('orders_id')->references('id')->on('orders')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
