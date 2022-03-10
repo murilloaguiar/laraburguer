@@ -20,11 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('v1')->group(function(){
 
-   Route::apiResource('endereco','User\AddressController');
+   Route::apiResource('address','User\AddressController');
    Route::apiResource('admin','Admin\AdminController');
-   Route::apiResource('categoria','Admin\CategoryController');
-   Route::apiResource('estabelecimento','EstablishmentController');
-   Route::apiResource('pedido','User\OrderController');
-   Route::apiResource('produto','Admin\ProductController');
-   Route::apiResource('detalhe-produto','Admin\ProductDetailController');
+   Route::apiResource('category','Admin\CategoryController');
+   Route::apiResource('establishment','EstablishmentController');
+   Route::apiResource('order','User\OrderController');
+   Route::apiResource('product','Admin\ProductController');
+   Route::apiResource('productDetail','Admin\ProductDetailController');
 });
