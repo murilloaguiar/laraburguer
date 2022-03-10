@@ -14,15 +14,15 @@ class CreateUserHasAddressesTable extends Migration
     public function up()
     {
         Schema::create('user_has_addresses', function (Blueprint $table) {
-         $table->unsignedInteger('users_id');
-         $table->unsignedInteger('adress_id');
+         $table->unsignedBigInteger('user_id');
+         $table->unsignedBigInteger('adress_id');
          $table->string('recipient',100);
          $table->timestamps();
 
-         $table->primary(['users_id', 'adress_id']);
+         $table->primary(['user_id', 'adress_id']);
 
-         $table->foreign('users_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
-         $table->foreign('adress_id')->references('id')->on('adresses')->cascadeOnDelete()->cascadeOnUpdate();
+         $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
+         $table->foreign('adress_id')->references('id')->on('addresses')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
