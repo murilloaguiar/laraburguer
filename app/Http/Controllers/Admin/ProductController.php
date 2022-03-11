@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -15,8 +15,8 @@ class ProductController extends Controller
     */
    public function index()
    {
-      $product = Product::all();
-      return $product;
+      $product = Product::with(['category'])->get();
+      return response()->json($product, 200);
    }
 
    /**
@@ -32,13 +32,13 @@ class ProductController extends Controller
    /**
     * Store a newly created resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
+    * @param  App\Http\Requests\ProductRequest  $request
     * @return \Illuminate\Http\Response
     */
-   public function store(Request $request)
+   public function store(ProductRequest $request)
    {
-      //dd($request->all());
-      $product = Product::create($request->all());
+      //dd($request);
+      $product = Product::create($request->validated());
       return response()->json($product, 201);
    }
 
@@ -48,11 +48,14 @@ class ProductController extends Controller
     * @param  \App\Models\Product  $product
     * @return \Illuminate\Http\Response
     */
-   public function show(Product $product)
+   public function show($id)
    {
-      //return $product;
+      $product = Product::with('category')->find($id);
       //dd($product);
-      //$product = $product->with('category');
+      if ($product === null) {
+         return response()->json(['erro'=>'O produto procurado não existe'], 404);
+      }
+      
       return response()->json($product, 200);
    }
 
@@ -70,23 +73,39 @@ class ProductController extends Controller
    /**
     * Update the specified resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Models\Product  $product
+    * @param  App\Http\Requests\ProductRequest  $request
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(Request $request, Product $product)
+   public function update(ProductRequest $request, $id)
    {
-      //
+      $product = Product::find($id);
+      //dd($product);
+      if ($product === null) {
+         return response()->json(['erro'=> 'O recurso não existe'], 404);
+      }
+
+      $product->update($request->validated());
+
+      return response()->json($product, 200);
+      
    }
 
    /**
     * Remove the specified resource from storage.
     *
-    * @param  \App\Models\Product  $product
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function destroy(Product $product)
+   public function destroy($id)
    {
-      //
+      $product = Product::find($id);
+
+      if ($product === null) {
+         return response()->json(['erro'=> 'O recurso não existe'], 404);
+      }
+
+      $product->delete();
+      return response()->json(['mensagem'=>'Removido com sucesso']);
    }
 }
