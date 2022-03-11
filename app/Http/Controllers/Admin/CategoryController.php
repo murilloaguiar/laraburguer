@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -15,7 +15,8 @@ class CategoryController extends Controller
     */
    public function index()
    {
-      
+      $category = Category::with('products')->orderBy('name')->get();
+      return response()->json($category,200);
    }
 
    /**
@@ -31,12 +32,12 @@ class CategoryController extends Controller
    /**
     * Store a newly created resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Http\Requests\CategoryRequest $request
     * @return \Illuminate\Http\Response
     */
-   public function store(Request $request)
+   public function store(CategoryRequest $request)
    {
-      //
+      return response()->json(Category::create($request->validated()),201);
    }
 
    /**
@@ -64,23 +65,36 @@ class CategoryController extends Controller
    /**
     * Update the specified resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Models\Category  $category
+    * @param  \App\Http\Requests\CategoryRequest  $request
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(Request $request, Category $category)
-   {
-      //
+   public function update(CategoryRequest $request, $id){
+      $category = Category::find($id);
+
+      if ($category === null) {
+         return response()->json(['erro'=>'Recurso inexistente'], 404);
+      }
+
+      $category->update($request->validated());
+      return response()->json($category, 200);
    }
 
    /**
     * Remove the specified resource from storage.
     *
-    * @param  \App\Models\Category  $category
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function destroy(Category $category)
+   public function destroy($id)
    {
-      //
+      $category = Category::find($id);
+
+      if ($category === null) {
+         return response()->json(['erro'=>'Recurso inexistente'], 404);
+      }
+
+      $category->delete();
+      return response()->json(['mensagem'=>'Removido com sucesso']);
    }
 }
