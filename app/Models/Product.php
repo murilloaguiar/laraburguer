@@ -12,7 +12,7 @@ class Product extends Model
    protected $fillable = ['name','price','status','category_id'];
 
    public function productDetail(){
-      return $this->hasOne('App\Models\ProductDetail');
+      return $this->hasOne('App\Models\ProductDetail','products_id','id');
    }
 
    public function category(){

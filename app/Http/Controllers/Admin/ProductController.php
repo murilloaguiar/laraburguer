@@ -15,7 +15,7 @@ class ProductController extends Controller
     */
    public function index()
    {
-      $product = Product::with(['category'])->get();
+      $product = Product::with(['category','productDetail'])->get();
       return response()->json($product, 200);
    }
 
@@ -50,7 +50,7 @@ class ProductController extends Controller
     */
    public function show($id)
    {
-      $product = Product::with('category')->find($id);
+      $product = Product::with(['category','productDetail'])->find($id);
       //dd($product);
       if ($product === null) {
          return response()->json(['erro'=>'O produto procurado não existe'], 404);
