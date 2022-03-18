@@ -29,5 +29,17 @@ class HomeController extends Controller
       echo 'Aqui ficará a página de exibição';
    }
 
+   public function catalog(){
+      return 'Página de catálogo aqui';
+   }
 
+   public function bag(){
+      return 'Página de carrinho aqui';
+   }
+
+   public function orders(){
+      if(auth()->user() == null) return 'Faça login para ver os seus pedidos';
+
+      return 'Página de pedidos aqui';
+   }
 }
