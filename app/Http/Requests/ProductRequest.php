@@ -23,7 +23,7 @@ class ProductRequest extends FormRequest
     */
    public function rules(){
       return [
-         'name' => 'required|min:3',
+         'name' => 'required|min:3|max:150',
          'price'=> 'required|numeric',
          'status'=> 'required|numeric',
          'category_id' => 'required|exists:categories,id'
@@ -34,6 +34,8 @@ class ProductRequest extends FormRequest
       return [
          'required' => 'O campo :attribute precisa ser preenchido',
          'numeric' => 'O campo :attribute precisa ser do tipo numérico',
+         'name.min'=> 'O campo nome não pode conter menos que 3 strings',
+         'name.max' => 'O nome do produto não pode ser maior do que 150 caracteres',
          'category_id.exists' => 'Essa categoria não está disponível na base de dados'
       ];
    }

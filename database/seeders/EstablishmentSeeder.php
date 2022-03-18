@@ -15,7 +15,7 @@ class EstablishmentSeeder extends Seeder
    public function run()
    {
       Establishment::create([
-         'open'=>0,
+         'open'=> 0,
          'name'=> 'Laraburguer'
       ]);
    }
