@@ -16,6 +16,11 @@ class CategoryController extends Controller
    public function index()
    {
       $category = Category::with('products')->orderBy('name')->get();
+
+      if (count($category)==0) {
+         return response()->json(['erro'=>'Não existem categorias cadastradas'], 404);
+      }
+
       return response()->json($category,200);
    }
 
@@ -43,12 +48,18 @@ class CategoryController extends Controller
    /**
     * Display the specified resource.
     *
-    * @param  \App\Models\Category  $category
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function show(Category $category)
+   public function show($id)
    {
-      return response()->json($category->with('products')->get(), 200);
+      $category = Category::with('products')->find($id);
+
+      if ($category === null) {
+         return response()->json(['erro'=>'Recurso inexistente'], 404);
+      }
+
+      return response()->json($category, 200);
    }
 
    /**

@@ -16,6 +16,11 @@ class ProductDetailController extends Controller
    public function index()
    {
       $productDetail = ProductDetail::with(['product'])->get();
+
+      if (count($productDetail)==0) {
+         return response()->json(['erro'=>'Não existem Detalhes cadastrados'], 404);
+      }
+      
       return response()->json($productDetail,200);
    }
 
@@ -49,6 +54,7 @@ class ProductDetailController extends Controller
    public function show($id)
    {
       $productDetail = ProductDetail::with(['product'])->find($id);
+      
       if ($productDetail == null) {
          return response()->json(['erro'=>'O detalhe procurado não existe'], 404);
       }
