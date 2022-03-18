@@ -15,7 +15,7 @@ class CreateEstablishmentsTable extends Migration
    {
       Schema::create('establishments', function (Blueprint $table) {
          $table->id();
-         $table->string('name',50);
+         $table->string('name',100);
          $table->integer('open');
          $table->timestamps();
       });
