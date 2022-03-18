@@ -20,3 +20,14 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::prefix('admin')->name('admin.')->group(function(){
+   Route::get('login','AuthAdmin\LoginController@showLoginForm')->name('login');
+   Route::post('login','AuthAdmin\LoginController@login')->name('login');
+
+   Route::middleware('auth:admin')->group(function(){
+      Route::get('/','Admin\AdminController@index')->name('index');
+   });
+
+});
+
+
