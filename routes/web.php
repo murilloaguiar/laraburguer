@@ -33,7 +33,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
    Route::post('login','AuthAdmin\LoginController@login')->name('login');
 
    Route::middleware('auth:admin')->group(function(){
-      Route::get('/','Admin\AdminController@index')->name('index');
+      Route::get('/','Admin\HomeAdminController@index')->name('index');
+      Route::get('pedido','Admin\HomeAdminController@order')->name('order');
    });
 
 });

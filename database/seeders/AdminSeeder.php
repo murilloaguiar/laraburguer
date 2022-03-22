@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
          'name'=>'Main Admin',
          'lastname'=> 'Owner',
          'email' => 'admin@admin.com',
-         'password' => bcrypt('123456'),
+         'password' => bcrypt('12345678'),
          'status' => 1
       ]);
    }
