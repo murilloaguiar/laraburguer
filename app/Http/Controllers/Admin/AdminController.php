@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Admin;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\AdminRequest;
 
 class AdminController extends Controller
 {
@@ -15,7 +15,7 @@ class AdminController extends Controller
     */
    public function index()
    {
-      return 'Logado';
+      return response()->json(Admin::all(), 200);
    }
 
    /**
@@ -31,23 +31,26 @@ class AdminController extends Controller
    /**
     * Store a newly created resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
+    * @param  \App\Http\Requests\AdminRequest $request
     * @return \Illuminate\Http\Response
     */
-   public function store(Request $request)
+   public function store(AdminRequest $request)
    {
-      //
+      return response()->json(Admin::create($request->validated()),201);
    }
 
    /**
     * Display the specified resource.
     *
-    * @param  \App\Models\Admin  $admin
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function show(Admin $admin)
+   public function show($id)
    {
-      //
+      $admin = Admin::find($id);
+      
+      if($admin === null) return response()->json(['erro'=>'Recurso não encontrado']);
+      return response()->json($admin, 200);
    }
 
    /**
@@ -64,13 +67,18 @@ class AdminController extends Controller
    /**
     * Update the specified resource in storage.
     *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Models\Admin  $admin
+    * @param  \App\Http\Requests\AdminRequest $request
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(Request $request, Admin $admin)
+   public function update(AdminRequest $request, $id)
    {
-      //
+      $admin = Admin::find($id);
+      
+      if($admin === null) return response()->json(['erro'=>'Recurso não encontrado']);
+
+      $admin->update($request->validated());
+      return response()->json($admin, 200);
    }
 
    /**
@@ -79,8 +87,14 @@ class AdminController extends Controller
     * @param  \App\Models\Admin  $admin
     * @return \Illuminate\Http\Response
     */
-   public function destroy(Admin $admin)
+   public function destroy($id)
    {
-      //
+      $admin = Admin::find($id);
+      
+      if($admin === null) return response()->json(['erro'=>'Recurso não encontrado']);
+
+      $admin->delete();
+
+      return response()->json(['msg'=>'Admin excluído com sucesso']);
    }
 }
