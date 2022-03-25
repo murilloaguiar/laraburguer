@@ -26,20 +26,20 @@ class HomeController extends Controller
     */
    public function index()
    {
-      echo 'Aqui ficará a página de exibição';
+      return view('site.home');
    }
 
    public function catalog(){
-      return 'Página de catálogo aqui';
+      return view('site.catalogo');
    }
 
    public function bag(){
-      return 'Página de carrinho aqui';
+      return view('site.carrinho');
    }
 
    public function orders(){
-      if(auth()->user() == null) return 'Faça login para ver os seus pedidos';
+      
 
-      return 'Página de pedidos aqui';
+      return view('site.pedido');
    }
 }

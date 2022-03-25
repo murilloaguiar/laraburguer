@@ -19,12 +19,12 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/catalog','HomeController@catalog');
-Route::get('/bag','HomeController@bag');
-Route::get('/orders','HomeController@orders');
+Route::get('/catalogo','HomeController@catalog')->name('catalogo');
+Route::get('/carrinho','HomeController@bag')->name('carrinho');
+Route::get('/pedido','HomeController@orders')->name('pedido');
 
 Route::middleware('auth')->prefix('user')->group(function(){
-   Route::get('profile', 'User\UserController@index');
+   Route::get('perfil', 'User\UserController@index');
 });
 
 
