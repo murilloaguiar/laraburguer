@@ -30,3 +30,15 @@ body{
    color: #fff;
    text-shadow: 2px 2px 8px #000;
 }
+
+#history-section{
+   color: #fff;
+   padding: 50px 0px;
+   margin: 50px 0px;
+}
+
+.photo img{
+   display: block;
+   border-radius: 10%;
+   width: 40em;
+}
