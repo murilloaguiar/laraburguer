@@ -1,0 +1,32 @@
+body{
+   overflow-x: hidden;
+}
+
+#header-index{
+   width: 100vw;
+   height: 100vh;
+   background-image: url('../img/lanche-capa.jpg');
+   background-position: top;
+   background-size: cover;
+   
+}
+
+#menu{
+   background-color: rgba(0,0,0,0.5);
+}
+
+#menu a{
+   color: #fff;
+   font-size: 1.15em;
+   font-weight: bold;
+   margin-left: 5px;
+}
+
+#menu a:hover{
+   color: rgb(172, 192, 81);
+}
+
+#texto-header-index{
+   color: #fff;
+   text-shadow: 2px 2px 8px #000;
+}
