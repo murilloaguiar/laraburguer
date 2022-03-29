@@ -1,18 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body{
    overflow-x: hidden;
+   font-family: 'Nunito', sans-serif;
 }
 
 #header-index{
    width: 100vw;
    height: 100vh;
-   background-image: url('../img/lanche-capa.jpg');
+   background-image: url('../img/lanche-capa2.jpg');
    background-position: top;
    background-size: cover;
-   
+   position: relative;
 }
 
 #menu{
-   background-color: rgba(0,0,0,0.5);
+   position: absolute;
+   z-index: 10;
+   left: 5%;
+}
+
+#footer{
+   background-color: rgba(0,0,0,1);
 }
 
 #menu a{
@@ -23,7 +32,7 @@ body{
 }
 
 #menu a:hover{
-   color: rgb(172, 192, 81);
+   color: rgb(242, 255, 0);
 }
 
 #texto-header-index{
@@ -42,3 +51,8 @@ body{
    border-radius: 10%;
    width: 40em;
 }
+
+.login-card{
+   margin-top: 20px;
+}
+

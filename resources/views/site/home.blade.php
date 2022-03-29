@@ -1,5 +1,7 @@
 @extends('site.layouts.app')
 
+@include('site.layouts._partials.topo')
+
 @section('conteudo')
 
    <section>

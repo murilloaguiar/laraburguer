@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md fixed-top" id="menu">
+<nav class="navbar navbar-expand-lg" id="menu">
    <div class="container">
-      <a class="navbar-brand" href="/"><img src="{{asset('img/Laravel.png')}}" width="70px"></a>
+      <a class="navbar-brand" href="/"><i class="bi bi-shop display-5"> Laraburguer</i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <i class="bi bi-card-text display-6 text-white"></i>
       </button>
