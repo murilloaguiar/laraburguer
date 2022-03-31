@@ -10,7 +10,7 @@ class HomeAdminController extends Controller
 {
    //
    public function index(){
-      return 'Admin logado';
+      return view('admin.home');
    }
 
    public function order(){
