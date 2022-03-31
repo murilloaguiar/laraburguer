@@ -14,6 +14,20 @@ class HomeAdminController extends Controller
    }
 
    public function order(){
-      return 'Pedidos em aberto';
+      return view('admin.order.order');
    }
+
+   public function product(){
+      return view('admin.product.product');
+   }
+
+   public function category(){
+      return view('admin.category.category');
+   }
+
+   
+
+
+
+
 }

@@ -258,19 +258,19 @@ return [
       ['header' => 'LARABURGUER'],
          [
             'text' => ' Novos Pedidos',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/pedido',
             'icon' => 'fas fa-solid fa-bell',
          ],
 
          [
          'text' => 'Produtos',
-         'url' => 'admin/produtos',
+         'url' => 'admin/produto',
          'icon' => 'fas fa-solid fa-list',
          ],
 
          [
          'text' => 'Categorias',
-         'url' => 'admin/categorias',
+         'url' => 'admin/categoria',
          'icon' => 'fas fa-solid fa-tag',
          ],
          
@@ -279,7 +279,7 @@ return [
       ['header' => 'ADMINISTRADOR'],
          [
             'text' => 'Perfil',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/perfil',
             'icon' => 'fas fa-fw fa-user',
          ],
          [
