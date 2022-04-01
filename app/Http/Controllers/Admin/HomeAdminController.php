@@ -25,6 +25,10 @@ class HomeAdminController extends Controller
       return view('admin.category.category');
    }
 
+   public function categoryCreate(){
+      return view('admin.category.create');
+   }
+
    
 
 

@@ -9,6 +9,11 @@
 @stop
 
 @section('content')
+
+   <a class="btn btn-success" href="{{route('admin.category.create')}}">
+      Cadastrar categorias
+   </a>
+
    @auth
       <ul id="list">
          

@@ -38,6 +38,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
       Route::get('pedido','Admin\HomeAdminController@order')->name('order');
       Route::get('produto','Admin\HomeAdminController@product')->name('product');
       Route::get('categoria','Admin\HomeAdminController@category')->name('category');
+      Route::get('categoria/criar','Admin\HomeAdminController@categoryCreate')->name('category.create');
       Route::get('perfil','Admin\ProfileAdminController@index')->name('profile');
    });
 
