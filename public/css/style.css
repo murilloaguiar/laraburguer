@@ -43,7 +43,7 @@ body{
 #history-section{
    color: #fff;
    padding: 50px 0px;
-   margin: 50px 0px;
+   margin: 100px 0px;
 }
 
 .photo img{
@@ -56,3 +56,29 @@ body{
    margin-top: 20px;
 }
 
+.card-diff{
+   width: 25rem;
+   height: 7rem;
+   border-radius: 0.25rem;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-diff:hover{
+   box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.5);
+   transition: box-shadow 0.3s;
+}
+
+.card-diff:nth-child(1){
+   background-image: linear-gradient(to right, rgba(85, 158, 158, 0.555), rgba(94, 173, 187, 0.719));
+}
+
+.card-diff:nth-child(2){
+   background-image: linear-gradient(to right, rgba(172, 140, 119, 0.575), rgba(168, 121, 89, 0.719));
+}
+
+.card-diff:nth-child(3){
+   background-image: linear-gradient(to right, rgba(174, 104, 177, 0.418), rgba(203, 124, 219, 0.719));
+}
+.card-diff:nth-child(4){
+   background-image: linear-gradient(to right, rgba(224, 211, 224, 0.418), rgba(201, 193, 202, 0.719));
+}

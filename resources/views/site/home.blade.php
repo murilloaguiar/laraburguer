@@ -15,23 +15,47 @@
       </header>
    </section>
 
-   <section class="container mt-4" id="star-section">
-      <div class="row">
-         <div class="col-sm-12 col-md-4 d-flex flex-column">
-            <i class="bi bi-heart display-3"></i>
-            <h5>Carinho</h5>
-            <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet. </p>
-         </div>
-         <div class="col-sm-12 col-md-4 d-flex flex-column">
-            <i class="bi bi-star display-3"></i>
-            <h5>Qualidade</h5>
-            <p class="text-muted">Nihil expedita atque quo repellendus, distinctio quibusdam fugit ullam iusto possimus libero quae animi aut.</p>
-         </div>
-         <div class="col-sm-12 col-md-4 d-flex flex-column">
-            <i class="bi bi-hourglass display-3"></i>
-            <h5>Rapidez</h5>
-            <p class="text-muted">Nihil expedita atque quo repellendus, distinctio quibusdam fugit ullam iusto possimus libero quae animi aut.</p>
-         </div>
+   <section class="container-fluid mt-4" id="star-section">
+      <header>
+         <h1 class="text-center">Nossos diferenciais</h1>
+      </header>
+      <div class="row justify-content-around">
+
+         @component('site._components.card-diff',[
+            'title' => 'Carinho',
+            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+            'class'=>'bi bi-heart'
+         ])
+             
+         @endcomponent
+
+         @component('site._components.card-diff',[
+            'title' => 'Qualidade',
+            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+            'class'=>'bi bi-star'
+         ])
+             
+         @endcomponent
+
+   
+         @component('site._components.card-diff',[
+            'title' => 'Rapidez',
+            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+            'class'=>'bi bi-hourglass'
+         ])
+             
+         @endcomponent
+
+         @component('site._components.card-diff',[
+            'title' => 'Sabor',
+            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+            'class'=>'bi bi-award'
+         ])
+             
+         @endcomponent
+
+         
+
       </div>
    </section>
 
@@ -63,6 +87,8 @@
       </div>
       
    </section>
+
+
 
 
 @endsection
