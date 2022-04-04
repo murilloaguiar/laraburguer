@@ -32,8 +32,11 @@ class HomeAdminController extends Controller
       return view('admin.category.create');
    }
 
-   public function categoryEdit(){
-      return view('admin.category.edit');
+   public function categoryEdit($id){
+      $category = Category::find($id);
+      return view('admin.category.edit', [
+         'category' => $category
+      ]);
    }
 
    

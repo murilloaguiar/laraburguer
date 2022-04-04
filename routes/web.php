@@ -39,6 +39,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
       Route::get('produto','Admin\HomeAdminController@product')->name('product');
       Route::get('categoria','Admin\HomeAdminController@category')->name('category');
       Route::get('categoria/criar','Admin\HomeAdminController@categoryCreate')->name('category.create');
+      Route::get('categoria/editar/{id}','Admin\HomeAdminController@categoryEdit')->name('category.edit');
       Route::get('perfil','Admin\ProfileAdminController@index')->name('profile');
    });
 

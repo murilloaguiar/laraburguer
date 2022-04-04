@@ -30,7 +30,11 @@
             <tr>
                <th>{{$category->id}}</th>
                <td>{{$category->name}}</td>
-               <td><a href="" class="btn btn-outline-secondary"><i class="fas fa-solid fa-pen"></i></a></td>
+
+               <td>
+                  <button onclick="edit({{$category->id}})" class="btn btn-outline-secondary"><i class="fas fa-solid fa-pen"></i></button>
+               </td>
+
                <td>
                   <button onclick="remove({{$category->id}})" class="btn btn-outline-danger delete"><i class="fas fa-solid fa-trash"></i></button>
                </td>
@@ -44,7 +48,6 @@
 @section('js')
    <script>
       
-
       const remove = (id)=>{
       
          const myHeaders = {
@@ -70,5 +73,10 @@
             })
             .catch(error=>console.log(error))
       }
+
+      const edit = (id) =>{
+         location.assign(`http://localhost:8000/admin/categoria/editar/${id}`)
+      }
+
    </script>
 @stop
