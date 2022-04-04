@@ -63,7 +63,7 @@
 
       <div class="container">
          <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6" id="content-history">
                <header>
                   <h4>Sobre nós</h4>
 
@@ -76,11 +76,41 @@
                      <li>Algo</li>
                   </ul>
                </header>
+
             </div>
 
             <div class="col-sm-12 col-md-6 d-none d-md-block" id="photo-history">
+
+               <div class="d-none d-lg-block" id="striped">
+                  <svg width="250" height="250">
+
+                     <circle cx="20" cy="20" r="5" fill="white" />
+                     <circle cx="80" cy="20" r="5" fill="white" />
+                     <circle cx="140" cy="20" r="5" fill="white" />
+                     <circle cx="200" cy="20" r="5" fill="white" />
+
+                     <circle cx="20" cy="80" r="5" fill="white" />
+                     <circle cx="80" cy="80" r="5" fill="white" />
+                     <circle cx="140" cy="80" r="5"fill="white" />
+                     <circle cx="200" cy="80" r="5" fill="white" />
+
+                     <circle cx="20" cy="140" r="5" fill="#F0A500" />
+                     <circle cx="80" cy="140" r="5" fill="#F0A500" />
+                     <circle cx="140" cy="140" r="5" fill="#F0A500" />
+                     <circle cx="200" cy="140" r="5" fill="#F0A500" />
+
+                     <circle cx="20" cy="200" r="5" fill="#F0A500" />
+                     <circle cx="80" cy="200" r="5" fill="#F0A500" />
+                     <circle cx="140" cy="200" r="5" fill="#F0A500" />
+                     <circle cx="200" cy="200" r="5" fill="#F0A500" />
+
+                     
+
+                  </svg>
+               </div>
                
                <img src="{{asset('img/lanchonete-historia.jpg')}}" alt=""> 
+
                
             </div>
          </div>

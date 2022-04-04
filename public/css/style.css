@@ -54,6 +54,11 @@ body{
    position: relative;;
 }
 
+#striped{
+   position: absolute;
+   z-index: 10;
+}
+
 #photo-history img{
    position: absolute;
    display: block;
@@ -73,12 +78,22 @@ body{
       left: 10em;
       top: -5em;
    }
+
+   #striped{
+      right: 12em;
+      top: 14em;
+   }
 }
 
 @media (min-width: 1200px) {
    #photo-history img{
       left: 8em;
       top: -6em;
+   }
+
+   #striped{
+      right: 19.5em;
+      top: 12.5em;
    }
 }
 
@@ -88,6 +103,11 @@ body{
       top: -7em;
       width: 45em;
    }
+
+   #striped{
+      right: 21em;
+      top: 12.5em;
+   }
 }
 
 @media (min-width: 1800px) {
@@ -95,6 +115,11 @@ body{
       left: 20em;
       top: -7em;
       width: 47em;
+   }
+
+   #striped{
+      right: 13em;
+      top: 12.5em;
    }
 }
 
