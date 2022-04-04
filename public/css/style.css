@@ -40,16 +40,62 @@ body{
    text-shadow: 2px 2px 8px #000;
 }
 
+.background-dark{
+   background-color: #1B1A17;
+}
+
 #history-section{
    color: #fff;
    padding: 50px 0px;
    margin: 100px 0px;
 }
 
-.photo img{
+#photo-history{
+   position: relative;;
+}
+
+#photo-history img{
+   position: absolute;
    display: block;
    border-radius: 10%;
-   width: 40em;
+   width: 42em;
+}
+
+@media (min-width: 768px) {
+   #photo-history img{
+      left: 2em;
+      top: -4.5em;
+   }
+}
+
+@media (min-width: 992px) {
+   #photo-history img{
+      left: 10em;
+      top: -5em;
+   }
+}
+
+@media (min-width: 1200px) {
+   #photo-history img{
+      left: 8em;
+      top: -6em;
+   }
+}
+
+@media (min-width: 1400px) {
+   #photo-history img{
+      left: 12em;
+      top: -7em;
+      width: 45em;
+   }
+}
+
+@media (min-width: 1800px) {
+   #photo-history img{
+      left: 20em;
+      top: -7em;
+      width: 47em;
+   }
 }
 
 .login-card{
@@ -57,6 +103,7 @@ body{
 }
 
 .card-diff{
+   color: #fff;
    width: 25rem;
    height: 7rem;
    border-radius: 0.25rem;
@@ -69,16 +116,16 @@ body{
 }
 
 .card-diff:nth-child(1){
-   background-image: linear-gradient(to right, rgba(85, 158, 158, 0.555), rgba(94, 173, 187, 0.719));
+   background-image: linear-gradient(to right, #E45826, #f35f29);
 }
 
 .card-diff:nth-child(2){
-   background-image: linear-gradient(to right, rgba(172, 140, 119, 0.575), rgba(168, 121, 89, 0.719));
+   background-image: linear-gradient( to right, #F0A500, #fcae06);
 }
 
 .card-diff:nth-child(3){
-   background-image: linear-gradient(to right, rgba(174, 104, 177, 0.418), rgba(203, 124, 219, 0.719));
+   background-image: linear-gradient(to right, #1B1A17, #1B1A17);
 }
 .card-diff:nth-child(4){
-   background-image: linear-gradient(to right, rgba(224, 211, 224, 0.418), rgba(201, 193, 202, 0.719));
+   background-image: linear-gradient( 135deg, #c4ab09, #dbbf07);
 }

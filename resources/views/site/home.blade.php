@@ -59,7 +59,7 @@
       </div>
    </section>
 
-   <section class="bg-dark" id="history-section">
+   <section class="background-dark" id="history-section">
 
       <div class="container">
          <div class="row">
@@ -78,7 +78,7 @@
                </header>
             </div>
 
-            <div class="col-sm-12 col-md-6 photo d-none d-md-block">
+            <div class="col-sm-12 col-md-6 d-none d-md-block" id="photo-history">
                
                <img src="{{asset('img/lanchonete-historia.jpg')}}" alt=""> 
                
