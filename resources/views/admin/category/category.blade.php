@@ -10,36 +10,65 @@
 
 @section('content')
 
-   <a class="btn btn-success" href="{{route('admin.category.create')}}">
+   <a class="btn btn-success mb-4" href="{{route('admin.category.create')}}">
       Cadastrar categorias
    </a>
 
    @auth
-      <ul id="list">
-         
-      </ul>
+   <h4 id="alert" class="text-danger"></h4>
+   <table class="table table-striped table-hover">
+      <thead>
+         <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+         </tr>
+      </thead>
+      <tbody>
+         @foreach ($categories as $category)
+            <tr>
+               <th>{{$category->id}}</th>
+               <td>{{$category->name}}</td>
+               <td><a href="" class="btn btn-outline-secondary"><i class="fas fa-solid fa-pen"></i></a></td>
+               <td>
+                  <button onclick="remove({{$category->id}})" class="btn btn-outline-danger delete"><i class="fas fa-solid fa-trash"></i></button>
+               </td>
+            </tr>
+         @endforeach
+      </tbody>
+   </table>
    @endauth
 @stop
 
 @section('js')
    <script>
-      const myHeaders = {
-         headers: {
-            Accept: 'application/json',
-            'Content-type': 'application/json'
-         },
-         
-      }
+      
 
-      fetch('http://localhost:8000/api/v1/category',myHeaders)
-         .then(response => response.json())
-         .then(data=>{
-            data.forEach(element => {
-               const li = document.createElement('li')
-               li.innerHTML = element.name
-               document.querySelector('#list').appendChild(li)
-            });
-         })
-         .catch(error=>console.log(error))
+      const remove = (id)=>{
+      
+         const myHeaders = {
+            method: 'DELETE',
+            headers: {
+               Accept: 'application/json',
+               'Content-type': 'application/json',
+            }
+         }
+
+         fetch(`http://localhost:8000/api/v1/category/${id}`,myHeaders)
+            .then(response => response.json())
+            .then(data=>{
+
+               window.scrollTo(0,0)
+
+               document.querySelector('#alert').innerHTML = data.mensagem
+
+               setTimeout(() => {
+                   location.reload()  
+               }, 3000);
+
+            })
+            .catch(error=>console.log(error))
+      }
    </script>
 @stop

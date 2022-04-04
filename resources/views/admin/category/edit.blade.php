@@ -55,7 +55,6 @@
          fetch('http://localhost:8000/api/v1/category', myHeaders)
             .then(response => response.json())
             .then(data => {
-               console.log(data)
                if(data.hasOwnProperty('errors')){
                   document.querySelector('#alert').innerHTML = data.errors.name
                }else{

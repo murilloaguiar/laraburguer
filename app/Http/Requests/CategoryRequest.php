@@ -23,13 +23,15 @@ class CategoryRequest extends FormRequest
     */
    public function rules() {
       return [
-         'name'=>'required|max:50|min:3'
+         'name'=>'required|string|max:50|min:3|unique:categories'
       ];
    }
 
    public function messages(){
       return [
          'required'=>'O campo :attribute precisa ser preenchido',
+         'name.string' => 'Digite somente caracteres',
+         'name.unique' => 'A categoria digita já existe',
          'name.max' => 'O nome não pode passar de 50 caracteres',
          'name.min' => 'O nome precisa ter mais de 3 caracteres'
       ];
