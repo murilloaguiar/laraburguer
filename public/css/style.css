@@ -22,11 +22,13 @@
    background-color: var(--black);
 }
 
+.background-brown{
+   background-color: var(--brown);
+}
 
 body{
    overflow-x: hidden;
    font-family: 'Nunito', sans-serif;
-   background-color: #FDEFF4;
 }
 
 #striped{
@@ -68,6 +70,10 @@ body{
 }
 
 /*------DIFF SECTION------*/
+#diff-section{
+   padding: 90px 0px;
+}
+
 .card-diff{
    color: #fff;
    width: 25rem;
@@ -104,8 +110,7 @@ body{
 /*------ABOUT SECTION------*/
 #about-section{
    color: #fff;
-   padding: 50px 0px;
-   margin: 100px 0px 0px 0px;
+   padding: 90px 0px;
 }
 
 #photo-about{
@@ -120,14 +125,15 @@ body{
 }
 
 
-   #striped{
-      right: 13em;
-      top: 12.5em;
-   }
-}
 
 /*-------PRODUCT SECTION-------*/
+#products-section{
+   padding: 90px 0px;
+}
 
+#products-section svg{
+   z-index: -200;
+}
 
 /*------FOOTER------*/
 #footer a{
@@ -140,7 +146,6 @@ body{
    color: var(--yellow);
 }
 
-/*------MEDIA QUERYS------*/
 @media (min-width: 768px) {
    #photo-about img{
       left: 2em;
@@ -172,6 +177,7 @@ body{
    }
 }
 
+/*-------MEDIA QUERY-------*/
 @media (min-width: 1400px) {
    #photo-about img{
       left: 12em;
@@ -191,3 +197,9 @@ body{
       top: -7em;
       width: 47em;
    }
+
+   #striped{
+      right: 13em;
+      top: 12.5em;
+   }
+}

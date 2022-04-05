@@ -15,7 +15,7 @@
       </header>
    </section>
 
-   <section class="container-fluid mt-4" id="star-section">
+   <section class="container-fluid" id="diff-section">
       <header>
          <h1 class="text-center text-brown"><strong>Nossos diferenciais</strong></h1>
       </header>
@@ -94,17 +94,21 @@
    </section>
 
    <section id="products-section" class="position-relative">
-      {{-- <svg width="500" height="500" class="position-absolute">
-         <circle cx="20" cy="250" r="450" fill="#c9b38e" />
-      </svg> --}}
+
+      <svg width="300px" height="300px" class="position-absolute bottom-0 d-none d-md-block">
+         <circle cx="0" cy="350" r="250" fill="#c9b38e" />
+      </svg>
 
       <div class="container">
-         <div class="row">
-            <div class="col-3">
-               <h1>O que vendemos</h1>
-            </div>
 
-            <div class="col-9">
+         <div class="row">
+            <div class="sol-sm-12 col-md-4 px-5 py-3">
+               <h1>O que vendemos</h1>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores, iusto quo cumque, animi officia voluptatibus voluptas ducimus similique atque delectus corporis assumenda nemo dignissimos quos, laudantium facere aspernatur est.</p>
+               
+            </div>
+         
+            <div class="col-sm-12 col-md-8 p-5">
                <div class="row gy-3">
                   @component('site._components.product-pill', [
                      'image'=> 'icon/hamburguer.svg', 
