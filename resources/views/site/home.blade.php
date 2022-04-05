@@ -54,16 +54,14 @@
              
          @endcomponent
 
-         
-
       </div>
    </section>
 
-   <section class="background-black" id="history-section">
+   <section class="background-black" id="about-section">
 
       <div class="container">
          <div class="row">
-            <div class="col-sm-12 col-md-6" id="content-history">
+            <div class="col-sm-12 col-md-6" id="content-about">
                <header>
                   <h3 class="text-brown">Sobre nós</h3>
 
@@ -79,7 +77,7 @@
 
             </div>
 
-            <div class="col-sm-12 col-md-6 d-none d-md-block" id="photo-history">
+            <div class="col-sm-12 col-md-6 d-none d-md-block" id="photo-about">
 
                @component('site._components.striped', ['fillBottom' => '#F0A500',
                'fillTop'=>'white'])
@@ -90,6 +88,66 @@
 
                
             </div>
+         </div>
+      </div>
+      
+   </section>
+
+   <section id="products-section" class="position-relative">
+      {{-- <svg width="500" height="500" class="position-absolute">
+         <circle cx="20" cy="250" r="450" fill="#c9b38e" />
+      </svg> --}}
+
+      <div class="container">
+         <div class="row">
+            <div class="col-3">
+               <h1>O que vendemos</h1>
+            </div>
+
+            <div class="col-9">
+               <div class="row gy-3">
+                  @component('site._components.product-pill', [
+                     'image'=> 'icon/hamburguer.svg', 
+                     'product' => 'Hamburger Artesanal',
+                     
+                  ])
+                      
+                  @endcomponent
+
+                  @component('site._components.product-pill', [
+                     'image'=> 'icon/porcoes.svg', 
+                     'product' => 'Porções'
+                  ])
+                      
+                  @endcomponent
+
+                  @component('site._components.product-pill', [
+                     'image'=> 'icon/drink.svg', 
+                     'product' => 'Bebidas'
+                  ])
+                      
+                  @endcomponent
+
+                  @component('site._components.product-pill', [
+                     'image'=> 'icon/combos.svg', 
+                     'product' => 'Combos',
+                     
+                  ])
+
+                  @endcomponent
+
+                  @component('site._components.product-pill', [
+                     'image'=> 'icon/petiscos.svg', 
+                     'product' => 'Petiscos',
+                     
+                  ])
+
+                  @endcomponent
+
+               </div>
+               
+            </div>
+            
          </div>
       </div>
       

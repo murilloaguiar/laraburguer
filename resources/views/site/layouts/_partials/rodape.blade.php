@@ -44,7 +44,7 @@
    <hr class="text-white">
 
    <div class="row">
-      <div class="col-2 text-white">Logo</div>
+      <div class="col-2 text-white"><a class="navbar-brand" href="/"><i class="bi bi-shop"> Laraburguer</i></a></div>
       <div class="col-8 d-flex justify-content-center">
          <p class="text-white">© Laraburguer, 2022. Direitos reservados. Feito por<a href="https://github.com/murilloaguiar"><strong class="text-yellow"> Murillo Aguiar</strong></a></p>
       </div>
