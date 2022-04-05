@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+:root{
+   --black: #1B1A17;
+   --yellow: #F0A500;
+   --orange: #E45826;
+   --brown: #c9b38e;
+
+}
+
+.text-yellow{
+   color: var(--yellow);
+}
+
+.text-brown{
+   color: var(--brown);
+}
+
 body{
    overflow-x: hidden;
    font-family: 'Nunito', sans-serif;
@@ -20,10 +36,6 @@ body{
    left: 5%;
 }
 
-#footer{
-   background-color: rgba(0,0,0,1);
-}
-
 #menu a{
    color: #fff;
    font-size: 1.15em;
@@ -32,7 +44,7 @@ body{
 }
 
 #menu a:hover{
-   color: rgb(242, 255, 0);
+   color: var(--yellow);
 }
 
 #texto-header-index{
@@ -40,8 +52,8 @@ body{
    text-shadow: 2px 2px 8px #000;
 }
 
-.background-dark{
-   background-color: #1B1A17;
+.background-black{
+   background-color: var(--black);
 }
 
 #history-section{
@@ -141,16 +153,28 @@ body{
 }
 
 .card-diff:nth-child(1){
-   background-image: linear-gradient(to right, #E45826, #f35f29);
+   background-image: linear-gradient(to right, var(--orange), #f35f29);
 }
 
 .card-diff:nth-child(2){
-   background-image: linear-gradient( to right, #F0A500, #fcae06);
+   background-image: linear-gradient( to right, var(--yellow), #fcae06);
 }
 
 .card-diff:nth-child(3){
-   background-image: linear-gradient(to right, #1B1A17, #1B1A17);
+   background-image: linear-gradient(to right, var(--black), #1B1A17);
 }
+
 .card-diff:nth-child(4){
    background-image: linear-gradient( 135deg, #c4ab09, #dbbf07);
+}
+
+#footer a{
+   text-decoration: none;
+   color: white;
+}
+
+
+#footer ul li a:hover{
+   text-decoration: none;
+   color: var(--yellow);
 }
