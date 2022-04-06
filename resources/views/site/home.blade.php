@@ -15,45 +15,49 @@
       </header>
    </section>
 
-   <section class="container-fluid" id="diff-section">
-      <header>
+   <section id="diff-section">
+
+      <header class="py-3">
          <h1 class="text-center text-brown"><strong>Nossos diferenciais</strong></h1>
       </header>
-      <div class="row justify-content-around">
 
-         @component('site._components.card-diff',[
-            'title' => 'Carinho',
-            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
-            'class'=>'bi bi-heart'
-         ])
-             
-         @endcomponent
+      <div class="container">
+         <div class="row g-4">
 
-         @component('site._components.card-diff',[
-            'title' => 'Qualidade',
-            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
-            'class'=>'bi bi-star'
-         ])
-             
-         @endcomponent
+            @component('site._components.card-diff',[
+               'title' => 'Carinho',
+               'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+               'class'=>'bi bi-heart'
+            ])
+               
+            @endcomponent
 
-   
-         @component('site._components.card-diff',[
-            'title' => 'Rapidez',
-            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
-            'class'=>'bi bi-hourglass'
-         ])
-             
-         @endcomponent
+            @component('site._components.card-diff',[
+               'title' => 'Qualidade',
+               'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+               'class'=>'bi bi-star'
+            ])
+               
+            @endcomponent
 
-         @component('site._components.card-diff',[
-            'title' => 'Sabor',
-            'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
-            'class'=>'bi bi-award'
-         ])
-             
-         @endcomponent
+      
+            @component('site._components.card-diff',[
+               'title' => 'Rapidez',
+               'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+               'class'=>'bi bi-hourglass'
+            ])
+               
+            @endcomponent
 
+            @component('site._components.card-diff',[
+               'title' => 'Sabor',
+               'text'=> 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, eveniet.',
+               'class'=>'bi bi-award'
+            ])
+               
+            @endcomponent
+
+         </div>
       </div>
    </section>
 
@@ -96,19 +100,19 @@
    <section id="products-section" class="position-relative">
 
       <svg width="300px" height="300px" class="position-absolute bottom-0 d-none d-md-block">
-         <circle cx="0" cy="350" r="250" fill="#c9b38e" />
+         <circle cx="0" cy="350" r="200" fill="#c9b38e" />
       </svg>
 
       <div class="container">
 
          <div class="row">
-            <div class="sol-sm-12 col-md-4 px-5 py-3">
+            <div class="sol-sm-12 col-md-4">
                <h1>O que vendemos</h1>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores, iusto quo cumque, animi officia voluptatibus voluptas ducimus similique atque delectus corporis assumenda nemo dignissimos quos, laudantium facere aspernatur est.</p>
                
             </div>
          
-            <div class="col-sm-12 col-md-8 p-5">
+            <div class="col-sm-12 col-md-8">
                <div class="row gy-3">
                   @component('site._components.product-pill', [
                      'image'=> 'icon/hamburguer.svg', 

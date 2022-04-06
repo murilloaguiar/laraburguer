@@ -50,7 +50,19 @@
       <div class="col-sm-12 col-md-7 d-flex justify-content-center">
          <p class="text-white">© Laraburguer, 2022. Direitos reservados. Feito por<a href="https://github.com/murilloaguiar"><strong class="text-yellow"> Murillo Aguiar</strong></a></p>
       </div>
-      <div class="col-sm-12 col-md-2 text-white">Redes sociais</div>
+      <div class="col-sm-12 col-md-2 text-white d-flex justify-content-end">
+         <ul class="list-inline">
+            <li class="list-inline-item">
+               <a href=""><i class="bi bi-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+               <a href=""><i class="bi bi-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+               <a href=""><i class="bi bi-twitter"></i></a>
+            </li>
+         </ul>
+      </div>
    </div>
    
 
