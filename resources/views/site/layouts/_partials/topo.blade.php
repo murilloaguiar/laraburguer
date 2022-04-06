@@ -1,6 +1,9 @@
-<nav class="navbar navbar-expand-lg" id="menu">
-   <div class="container">
-      <a class="navbar-brand" href="/"><i class="bi bi-shop display-5"> Laraburguer</i></a>
+<nav class="navbar navbar-expand-xl container" id="menu">
+   
+      <a class="navbar-brand me-0 d-flex align-items-center" href="/">
+         <i class="bi bi-shop display-6 me-2"></i>
+         Laraburguer
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <i class="bi bi-card-text display-6 text-white"></i>
       </button>
@@ -26,5 +29,5 @@
             </li>
          </ul>
       </div>
-   </div>
+   
 </nav>

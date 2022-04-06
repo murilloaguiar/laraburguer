@@ -7,7 +7,7 @@
    <section>
       <header class="d-flex align-items-center" id="header-index">
          <div class="row justify-content-center">
-            <div class="col-md-10">
+            <div class="col-10">
                <h1 class="display-4" id="texto-header-index">Algum texto legal bem aqui</h1>
                <a class="btn  btn-lg btn-outline-warning" href="{{route('catalogo')}}">Cardápio</a>
             </div>
@@ -107,7 +107,7 @@
 
          <div class="row">
             <div class="sol-sm-12 col-md-4">
-               <h1>O que vendemos</h1>
+               <h1 class="text-brown">O que vendemos</h1>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet asperiores, iusto quo cumque, animi officia voluptatibus voluptas ducimus similique atque delectus corporis assumenda nemo dignissimos quos, laudantium facere aspernatur est.</p>
                
             </div>

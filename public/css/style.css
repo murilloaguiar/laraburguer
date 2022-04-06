@@ -44,13 +44,13 @@ body{
    background-image: url('../img/lanche-capa2.jpg');
    background-position: top;
    background-size: cover;
-   position: relative;
 }
 
 #menu{
    position: absolute;
    z-index: 10;
-   left: 5%;
+   top: 0px;
+   left: 10%;
 }
 
 #menu a{
@@ -83,7 +83,7 @@ body{
 .card-diff:hover{
    box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.5);
    /*box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.5);*/
-   transition: box-shadow 0.5s;
+   transition: box-shadow 0.3s;
 }
 
 #card-father:nth-child(1) .card-diff{
