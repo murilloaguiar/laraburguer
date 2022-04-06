@@ -49,7 +49,10 @@
    <script>
       
       const remove = (id)=>{
-      
+         let confirmacao = confirm('tem certeza que deseja remover esse registro?')
+
+         if (!confirmacao) return false
+
          const myHeaders = {
             method: 'DELETE',
             headers: {

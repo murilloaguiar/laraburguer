@@ -36,10 +36,19 @@ Route::prefix('admin')->name('admin.')->group(function(){
    Route::middleware('auth:admin')->group(function(){
       Route::get('/','Admin\HomeAdminController@index')->name('index');
       Route::get('pedido','Admin\HomeAdminController@order')->name('order');
+
       Route::get('produto','Admin\HomeAdminController@product')->name('product');
+
+      Route::get('produto/criar','Admin\HomeAdminController@productCreate')->name('product.create');
+
+      Route::get('produto/editar/{id}','Admin\HomeAdminController@productEdit')->name('product.edit');
+
       Route::get('categoria','Admin\HomeAdminController@category')->name('category');
+
       Route::get('categoria/criar','Admin\HomeAdminController@categoryCreate')->name('category.create');
+
       Route::get('categoria/editar/{id}','Admin\HomeAdminController@categoryEdit')->name('category.edit');
+
       Route::get('perfil','Admin\ProfileAdminController@index')->name('profile');
    });
 
