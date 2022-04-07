@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,10 @@ class HomeAdminController extends Controller
    }
 
    public function order(){
-      return view('admin.order.order');
+      $orders = Order::with(['user','products'])->get();
+      return view('admin.order.order',[
+         'orders' => $orders
+      ]);
    }
 
    public function product(){

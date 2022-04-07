@@ -3,38 +3,48 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-   <h1>Pedidos em aberto</h1>
+   <h1>Lista de pedidos</h1>
 
    
 @stop
 
 @section('content')
+   
    @auth
-      <ul id="list">
-         
-      </ul>
+      <h4 id="alert" class="text-danger"></h4>
+      <table class="table table-striped table-hover">
+         <thead>
+            <tr>
+               <th scope="col">ID</th>
+               <th scope="col">Status</th>
+               <th scope="col">Nome do usuário</th>
+               <th scope="col">Produtos</th>
+            </tr>
+         </thead>
+         <tbody>
+            @foreach ($orders as $order)
+               <tr>
+                  <th>{{$order->id}}</th>
+                  <th>{{$order->status}}</th>
+                  <td>{{$order->user->name}}</td>
+
+                  <td>
+                     
+                     @foreach ($order->products as $product)
+                        {{$product->name}}
+                     @endforeach
+                     
+                  </td>
+                  
+               </tr>
+            @endforeach
+         </tbody>
+      </table>
    @endauth
 @stop
 
 @section('js')
    <script>
-      /*const myHeaders = {
-         headers: {
-            Accept: 'application/json',
-            'Content-type': 'application/json'
-         },
-         
-      }
-
-      fetch('http://localhost:8000/api/v1/order',myHeaders)
-         .then(response => response.json())
-         .then(data=>{
-            data.forEach(element => {
-               const li = document.createElement('li')
-               li.innerHTML = element.name
-               document.querySelector('#list').appendChild(li)
-            });
-         })
-         .catch(error=>console.log(error))*/
+      
    </script>
 @stop
