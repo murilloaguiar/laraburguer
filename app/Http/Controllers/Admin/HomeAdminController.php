@@ -19,7 +19,7 @@ class HomeAdminController extends Controller
    }
 
    public function product(){
-      $products = Product::all();
+      $products = Product::with(['category'])->get();
       return view('admin.product.product',[
          'products' => $products
       ]);
@@ -33,7 +33,12 @@ class HomeAdminController extends Controller
    }
 
    public function productEdit($id){
-      return view('admin.product.product');
+      $product = Product::find($id);
+      $categories = Category::orderBy('name')->get();
+      return view('admin.product.edit',[
+         'product'=>$product,
+         'categories'=>$categories
+      ]);
    }
 
    public function category(){
