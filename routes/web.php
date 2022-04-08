@@ -19,12 +19,13 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/catalogo','HomeController@catalog')->name('catalogo');
-Route::get('/carrinho','HomeController@bag')->name('carrinho');
-Route::get('/pedido','HomeController@orders')->name('pedido');
+Route::get('/catalogo','HomeController@catalog')->name('catalog');
+Route::get('/carrinho','HomeController@bag')->name('bag');
 
-Route::middleware('auth')->prefix('user')->group(function(){
-   Route::get('perfil', 'User\UserController@index');
+
+Route::middleware('auth')->prefix('user')->name('user.')->group(function(){
+   Route::get('/pedido','HomeController@orders')->name('order');
+   Route::get('perfil', 'User\UserController@index')->name('profile');
 });
 
 //--------Rotas do administrador

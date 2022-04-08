@@ -9,7 +9,7 @@
          <div class="row justify-content-center">
             <div class="col-10">
                <h1 class="display-4" id="texto-header-index">Algum texto legal bem aqui</h1>
-               <a class="btn  btn-lg btn-outline-warning" href="{{route('catalogo')}}">Cardápio</a>
+               <a class="btn  btn-lg btn-outline-warning" href="{{route('catalog')}}">Cardápio</a>
             </div>
          </div>
       </header>

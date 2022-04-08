@@ -60,8 +60,12 @@ body{
    margin-left: 5px;
 }
 
-#menu a:hover{
+#menu #navbarNav a:hover{
    color: var(--yellow);
+}
+
+#navbarNav li ul.dropdown-menu {
+   background-color: transparent;
 }
 
 #texto-header-index{

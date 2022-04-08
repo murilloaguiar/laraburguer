@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-   @auth
+   @auth('admin')
       <h4>Name: {{$user->name}}</h4>
       <h4>Sobrenome: {{$user->lastname}}</h4>
       <h4>Email: {{$user->email}}</h4>

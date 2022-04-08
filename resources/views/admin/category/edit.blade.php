@@ -10,7 +10,7 @@
 
 @section('content')
 
-   @auth
+   @auth('admin')
 
       
       <div class="mb-3">

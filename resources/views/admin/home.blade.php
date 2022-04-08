@@ -7,5 +7,5 @@
 @stop
 
 @section('content')
-   @auth<p>Bem vindo ao Painel do administrador </p>@endauth
+   @auth('admin')<p>Bem vindo ao Painel do administrador </p>@endauth
 @stop

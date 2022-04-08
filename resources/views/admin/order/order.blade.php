@@ -10,7 +10,7 @@
 
 @section('content')
    
-   @auth
+   @auth('admin')
       <h4 id="alert" class="text-danger"></h4>
       <table class="table table-striped table-hover">
          <thead>
