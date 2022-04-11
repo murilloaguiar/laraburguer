@@ -22,6 +22,7 @@
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Editar</th>
+            <th scope="col">Ver</th>
             <th scope="col">Excluir</th>
          </tr>
       </thead>
@@ -33,6 +34,10 @@
 
                <td>
                   <button onclick="edit({{$category->id}})" class="btn btn-outline-secondary"><i class="fas fa-solid fa-pen"></i></button>
+               </td>
+
+               <td>
+                  <button onclick="show({{$category->id}})" class="btn btn-outline-info"><i class="fas fa-solid fa-eye"></i></button>
                </td>
 
                <td>
@@ -79,6 +84,10 @@
 
       const edit = (id) =>{
          location.assign(`http://localhost:8000/admin/categoria/editar/${id}`)
+      }
+
+      const show = (id) =>{
+         location.assign(`http://localhost:8000/admin/categoria/ver/${id}`)
       }
 
    </script>

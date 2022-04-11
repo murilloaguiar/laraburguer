@@ -50,6 +50,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
       Route::get('categoria/editar/{id}','Admin\HomeAdminController@categoryEdit')->name('category.edit');
 
+      Route::get('categoria/ver/{id}','Admin\HomeAdminController@categoryShow')->name('category.show');
+
       Route::get('perfil','Admin\ProfileAdminController@index')->name('profile');
    });
 

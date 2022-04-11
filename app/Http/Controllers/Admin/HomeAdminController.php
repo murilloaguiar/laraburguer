@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeAdminController extends Controller
 {
@@ -63,9 +64,11 @@ class HomeAdminController extends Controller
       ]);
    }
 
-   
-
-
+   public function categoryShow($id){
+      return view('admin.category.show', [
+         'id' => $id
+      ]);
+   }
 
 
 }
