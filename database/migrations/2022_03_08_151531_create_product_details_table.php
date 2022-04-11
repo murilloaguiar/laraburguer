@@ -19,8 +19,8 @@ class CreateProductDetailsTable extends Migration
             $table->text('details');
             $table->timestamps();
 
-            $table->foreignId('products_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
-            $table->unique('products_id');
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->unique('product_id');
         });
     }
 

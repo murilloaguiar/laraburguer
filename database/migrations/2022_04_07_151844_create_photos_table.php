@@ -18,7 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('image',255);
             $table->timestamps();
 
-            $table->foreignId('products_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

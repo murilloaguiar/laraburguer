@@ -27,4 +27,5 @@ Route::prefix('v1')->group(function(){
    Route::apiResource('order','User\OrderController');
    Route::apiResource('product','Admin\ProductController');
    Route::apiResource('productDetail','Admin\ProductDetailController');
+   Route::apiResource('photo','Admin\PhotoController');
 });
