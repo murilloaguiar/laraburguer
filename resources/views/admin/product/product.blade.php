@@ -18,7 +18,6 @@
       <table class="table table-striped table-hover">
          <thead>
             <tr>
-               <th scope="col">ID</th>
                <th scope="col">Nome</th>
                <th scope="col">Categoria</th>
                <th scope="col">Editar</th>
@@ -28,11 +27,15 @@
          <tbody>
             @foreach ($products as $product)
                <tr>
-                  <th>{{$product->id}}</th>
-                  <td>{{$product->name}}</td>
+                  <td>{{$product->name}}</td> 
 
-                  <td>{{$product->category->name}}</td>
-
+                  @if ($product->category_id != null)
+                     <td>{{$product->category->name}}</td>
+                  @else
+                     <td>Sem categoria</td>
+                  
+                  @endif
+                  
                   <td>
                      <button onclick="edit({{$product->id}})" class="btn btn-outline-secondary"><i class="fas fa-solid fa-pen"></i></button>
                   </td>

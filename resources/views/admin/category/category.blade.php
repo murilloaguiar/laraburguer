@@ -19,17 +19,15 @@
    <table class="table table-striped table-hover">
       <thead>
          <tr>
-            <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Editar</th>
-            <th scope="col">Ver</th>
+            <th scope="col">Produtos</th>
             <th scope="col">Excluir</th>
          </tr>
       </thead>
       <tbody>
          @foreach ($categories as $category)
             <tr>
-               <th>{{$category->id}}</th>
                <td>{{$category->name}}</td>
 
                <td>

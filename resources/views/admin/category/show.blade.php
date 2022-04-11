@@ -10,7 +10,7 @@
 
 @section('content')
 
-   <a class="btn btn-success mb-4" href="{{url()->previous()}}">
+   <a class="btn btn-secondary mb-4" href="{{url()->previous()}}">
       Voltar
    </a>
 
