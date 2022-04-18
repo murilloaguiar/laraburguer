@@ -7,6 +7,7 @@
    --yellow: #F0A500;
    --orange: #E45826;
    --brown: #c9b38e;
+   --pasta: #c4ab09;
 
 }
 
@@ -36,7 +37,10 @@ body{
    z-index: 10;
 }
 
-/*------HEADER------*/
+.padding-section{
+   padding: 90px 0px;
+}
+/*------MENU------*/
 
 #header-index{
    width: 100vw;
@@ -73,71 +77,6 @@ body{
    text-shadow: 2px 2px 8px #000;
 }
 
-/*------DIFF SECTION------*/
-#diff-section{
-   padding-top: 90px;
-   padding-bottom: 90px;
-}
-
-.card-diff{
-   color: #fff;
-   /*box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.5);*/
-}
-
-.card-diff:hover{
-   box-shadow: 0 2px 10px 0px rgba(0, 0, 0, 0.5);
-   /*box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.5);*/
-   transition: box-shadow 0.3s;
-}
-
-#card-father:nth-child(1) .card-diff{
-   background-image: linear-gradient(to right, var(--orange), #f35f29);
-}
-
-#card-father:nth-child(2) .card-diff{
-   background-image: linear-gradient( to right, var(--yellow), #fcae06);
-}
-
-#card-father:nth-child(3) .card-diff{
-   background-image: linear-gradient(to right, var(--black), #1B1A17);
-}
-
-#card-father:nth-child(4) .card-diff{
-   background-image: linear-gradient( 135deg, #c4ab09, #dbbf07);
-}
-
-.login-card{
-   margin-top: 20px;
-}
-
-/*------ABOUT SECTION------*/
-#about-section{
-   color: #fff;
-   padding: 90px 0px;
-}
-
-#photo-about{
-   position: relative;;
-}
-
-#photo-about img{
-   position: absolute;
-   display: block;
-   border-radius: 10%;
-   width: 42em;
-}
-
-
-
-/*-------PRODUCT SECTION-------*/
-#products-section{
-   padding: 90px 0px;
-}
-
-#products-section svg{
-   z-index: -200;
-}
-
 /*------FOOTER------*/
 #footer a{
    text-decoration: none;
@@ -149,60 +88,3 @@ body{
    color: var(--yellow);
 }
 
-@media (min-width: 768px) {
-   #photo-about img{
-      left: 2em;
-      top: -4.5em;
-   }
-}
-
-@media (min-width: 992px) {
-   #photo-about img{
-      left: 10em;
-      top: -5em;
-   }
-
-   #striped{
-      right: 12em;
-      top: 14em;
-   }
-}
-
-@media (min-width: 1200px) {
-   #photo-about img{
-      left: 8em;
-      top: -6em;
-   }
-
-   #striped{
-      right: 19.5em;
-      top: 12.5em;
-   }
-}
-
-/*-------MEDIA QUERY-------*/
-@media (min-width: 1400px) {
-   #photo-about img{
-      left: 12em;
-      top: -7em;
-      width: 45em;
-   }
-
-   #striped{
-      right: 21em;
-      top: 12.5em;
-   }
-}
-
-@media (min-width: 1800px) {
-   #photo-about img{
-      left: 20em;
-      top: -7em;
-      width: 47em;
-   }
-
-   #striped{
-      right: 13em;
-      top: 12.5em;
-   }
-}

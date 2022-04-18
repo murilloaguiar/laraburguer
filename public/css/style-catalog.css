@@ -1,0 +1,14 @@
+#header-catalog{
+   width: 100vw;
+   height: 50vh;
+   background-image: url('../img/lanche-catalogo.jpg');
+   background-position: center;
+   background-size: cover;
+}
+
+#title-catalog{
+   background-image: linear-gradient( to right, var(--pasta), #dbbf07);
+   border-radius: 1rem;
+   padding: 2rem 3rem;
+
+}

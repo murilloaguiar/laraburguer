@@ -25,7 +25,7 @@ Route::get('/carrinho','HomeController@bag')->name('bag');
 
 Route::middleware('auth')->prefix('user')->name('user.')->group(function(){
    Route::get('/pedido','HomeController@orders')->name('order');
-   Route::get('perfil', 'User\UserController@index')->name('profile');
+   Route::get('perfil', 'User\HomeUserController@index')->name('profile');
 });
 
 //--------Rotas do administrador
@@ -57,4 +57,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
 });
 
-
+Route::fallback(function(){
+   return 'Recurso indisponível';
+});

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 /**
@@ -30,7 +31,11 @@ class HomeController extends Controller
    }
 
    public function catalog(){
-      return view('site.catalogo');
+      $products = Product::with(['category'])->orderBy('name')->get();
+      
+      return view('site.catalogo', [
+         'products'=>$products
+      ]);
    }
 
    public function bag(){

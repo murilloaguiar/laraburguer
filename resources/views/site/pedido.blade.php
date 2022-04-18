@@ -12,11 +12,11 @@
 
 @auth
     
-@section('conteudo')
+   @section('conteudo')
 
-   <h1>Catálogo</h1>
+      <h1>Catálogo</h1>
 
 
-@endsection
+   @endsection
 
 @endauth

@@ -2,6 +2,10 @@
 
 @include('site.layouts._partials.topo')
 
+@section('css')
+   <link rel="stylesheet" href="{{asset('css/style-index.css')}}">
+@endsection
+
 @section('conteudo')
 
    <section>
