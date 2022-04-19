@@ -29,13 +29,22 @@
                   <div class="col-12">
                      <form class="d-flex" method="get" action="{{route('catalog')}}">
                         <input class="form-control me-2" type="search" placeholder="Pesquisar produto" aria-label="Search" name="pesquisa">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form>
+                        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                     </form>
+            
                   </div>
                </div>
                <div class="row">
                   <div class="col-12">
-                     filtre os resultados por categoria
+                     <form class="d-flex" method="get" action="{{route('catalog')}}">
+                        <select class="form-select" aria-label="Default select example" name="categoria">
+                           <option selected disabled>Filtre por categoria</option>
+                           @foreach ($categories as $category)
+                              <option value="{{$category->id}}">{{$category->name}}</option>
+                           @endforeach
+                        </select>
+                        <button class="btn btn-outline-success" type="submit"><i class="bi bi-filter"></i></button>
+                     </form>
                   </div>
                </div>
                
