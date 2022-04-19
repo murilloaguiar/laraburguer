@@ -12,3 +12,12 @@
    padding: 2rem 3rem;
 
 }
+
+a{
+   text-decoration: none;
+   color: #000;
+}
+
+a:hover{
+   color: rgb(87, 65, 65)
+}

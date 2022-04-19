@@ -30,8 +30,11 @@ class HomeController extends Controller
       return view('site.home');
    }
 
-   public function catalog(){
-      $products = Product::with(['category'])->orderBy('name')->get();
+   public function catalog(Request $request){
+
+      //dd($request->pesquisa);
+      if ($request->pesquisa) $products = Product::with(['category'])->orderBy('name')->where('name', 'like' ,'%'.$request->pesquisa.'%')->get();
+      else $products = Product::with(['category'])->orderBy('name')->get();
       
       return view('site.catalogo', [
          'products'=>$products

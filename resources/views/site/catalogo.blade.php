@@ -17,17 +17,20 @@
       <div class="container">
          <div class="row" id="title-catalog">
 
-            <div class="col-8">
+            <div class="col-7">
                
-               <h1 class="display-4">Confira nossos produtos</h1>
+               <h1>Confira nossos produtos</h1>
                <p class="card-text">Lanches, porções e petiscos de qualidade, feitos com carinho e habilidade.</p>
                
             </div>
             
-            <div class="col-4">
+            <div class="col-5">
                <div class="row">
                   <div class="col-12">
-                     pesquise o produto
+                     <form class="d-flex" method="get" action="{{route('catalog')}}">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar produto" aria-label="Search" name="pesquisa">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
                   </div>
                </div>
                <div class="row">
@@ -42,22 +45,26 @@
    </section>
 
    <section class="container">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="row row-cols-2 row-cols-lg-3 g-4">
 
          @foreach ($products as $product)
+
             <div class="col">
-               <div class="card">
-                  <img src="{{asset('img/lanche-capa.jpg')}}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                     <h5 class="card-title">{{$product->name}}</h5>
-                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                     <p class="card-text"><small class="text-muted">Categoria: {{$product->category->name}}</small></p>
+               <a href="">
+                  <div class="card">
+                     <img src="{{asset('img/lanche-capa.jpg')}}" class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <h5 class="card-title">{{$product->name}}</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Categoria: {{$product->category->name}}</small></p>
+                     </div>
+                     <div class="card-footer">
+                        Preço: R$ {{$product->price}}
+                     </div>
                   </div>
-                  <div class="card-footer">
-                     Preço: R$ {{$product->price}}
-                  </div>
-               </div>
+               </a>
             </div>
+
          @endforeach
 
       </div>
