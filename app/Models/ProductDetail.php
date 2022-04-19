@@ -9,9 +9,9 @@ class ProductDetail extends Model
 {
    use HasFactory;
 
-   protected $fillable = ['ingredients','details','products_id'];
+   protected $fillable = ['ingredients','details','product_id'];
 
    public function product(){
-      return $this->belongsTo('App\Models\Product','products_id','id');
+      return $this->belongsTo('App\Models\Product','product_id','id');
    }
 }

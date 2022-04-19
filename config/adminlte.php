@@ -269,6 +269,12 @@ return [
          ],
 
          [
+         'text' => 'Detalhes dos produtos',
+         'url' => 'admin/produto-detalhe',
+         'icon' => 'fas fa-solid fa-folder',
+         ],
+
+         [
          'text' => 'Categorias',
          'url' => 'admin/categoria',
          'icon' => 'fas fa-solid fa-tag',

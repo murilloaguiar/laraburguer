@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -20,6 +21,20 @@ class HomeAdminController extends Controller
       $orders = Order::with(['user','products'])->get();
       return view('admin.order.order',[
          'orders' => $orders
+      ]);
+   }
+
+   public function productDetail(){
+      $productsDetail = ProductDetail::with(['product'])->get();
+      return view('admin.productDetail.productDetail',[
+         'productsDetail' => $productsDetail
+      ]);
+   }
+
+   public function productDetailCreate(){
+      $products = Product::with(['category'])->orderBy('name')->get();
+      return view('admin.productDetail.create',[
+         'products' => $products
       ]);
    }
 

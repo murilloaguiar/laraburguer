@@ -25,7 +25,7 @@ class ProductDetailRequest extends FormRequest
       return [
          'ingredients' => 'nullable|min:3|max:300',
          'details' => 'required|min:3|max:400',
-         'products_id' => "required|unique:product_details,id,$this->id|exists:products,id|integer"
+         'product_id' => "required|unique:product_details,product_id,$this->id|exists:products,id|integer"
       ];
    }
 
@@ -41,9 +41,9 @@ class ProductDetailRequest extends FormRequest
 
    public function attributes(){
       return [
-         'ingredients' => 'Ingredientes do produto',
-         'details' => 'Detalhes do Produto',
-         'products_id' => 'Produto'
+         'ingredients' => 'ingredientes',
+         'details' => 'detalhes',
+         'products_id' => 'produto'
       ];
    }
 }

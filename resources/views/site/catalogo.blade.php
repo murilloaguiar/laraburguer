@@ -53,7 +53,7 @@
       </div>
    </section>
 
-   <section class="container">
+   <section class="container pb-5">
       <div class="row row-cols-2 row-cols-lg-3 g-4">
 
          @foreach ($products as $product)
