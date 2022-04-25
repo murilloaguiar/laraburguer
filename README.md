@@ -8,7 +8,7 @@
 </p>
 
 # 
-**Projeto feito para testar conhecimentos em Laravel, Vue e API's**
+**Projeto feito para testar conhecimentos em Laravel, API's e AdminLTE**
 
 # Sobre o projeto / Levantamento de requisitos
 Projeto visa um sistema web de pedidos para uma lanchonete fictícia chamada Laraburguer. Será possível montar pedidos, adicioná-los ao carrinho e efetuar a compra. 
@@ -17,7 +17,23 @@ A aplicação possuirá um front-end contendo informações sobre a lanchonte e 
 
 Além disso o dono da Laraburguer terá acesso restrito ao backend da aplicação, visualizando um dashboard com as informações de vendas da lanchonete e os **pedidos** a serem feitos. 
 
+Verificar  [Documentação](https://github.com/murilloaguiar/laraburguer/blob/main/Documentacao.odt) para mais informações.
+
 ---
+Clone o projeto e rode os comandos:
+
+`composer install`
+
+Copie o conteúdo de .env-example para um novo arquivo chamado .env. Adeque o nome do seu banco de dados no .env
+
+`php artisan key:generate`
+
+`php artisan migrate --seed`
+
+`php artisan serve`
+
+---
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
