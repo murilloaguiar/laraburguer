@@ -31,6 +31,21 @@ class HomeAdminController extends Controller
       ]);
    }
 
+   public function productDetailShow($id){
+      return view('admin.product.showDetail',[
+         'id' => $id
+      ]);
+   }
+
+   public function productDetailEdit($id){
+      $productDetail = ProductDetail::find($id);
+      $products = Product::with(['category'])->orderBy('name')->get();
+      return view('admin.productDetail.edit',[
+         'productDetail' => $productDetail,
+         'products' => $products
+      ]);
+   }
+
    public function productDetailCreate(){
       $products = Product::with(['category'])->orderBy('name')->get();
       return view('admin.productDetail.create',[
@@ -39,7 +54,8 @@ class HomeAdminController extends Controller
    }
 
    public function product(){
-      $products = Product::with(['category'])->get();
+      $products = Product::with(['category', 'productDetail'])->get();
+      //dd($products);
       return view('admin.product.product',[
          'products' => $products
       ]);

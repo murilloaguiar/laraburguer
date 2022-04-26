@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Produto')
 
 @section('content_header')
    <h1>Lista de produtos</h1>
@@ -21,6 +21,7 @@
                <th scope="col">Nome</th>
                <th scope="col">Categoria</th>
                <th scope="col">Editar</th>
+               <th scope="col">Detalhes</th>
                <th scope="col">Excluir</th>
             </tr>
          </thead>
@@ -35,11 +36,19 @@
                      <td>Sem categoria</td>
                   
                   @endif
-                  
+
                   <td>
                      <button onclick="edit({{$product->id}})" class="btn btn-outline-secondary"><i class="fas fa-solid fa-pen"></i></button>
                   </td>
-
+                  
+                  @if ($product->productDetail != null)
+                     <td>
+                        <button onclick="detail({{$product->productDetail->id}})" class="btn btn-outline-info"><i class="fas fa-solid fa-eye"></i></button>
+                     </td>
+                  @else
+                     <td>Sem detalhes</td>
+                  @endif
+               
                   <td>
                      <button onclick="remove({{$product->id}})" class="btn btn-outline-danger delete"><i class="fas fa-solid fa-trash"></i></button>
                   </td>
@@ -83,6 +92,10 @@
 
       const edit = (id) =>{
          location.assign(`http://localhost:8000/admin/produto/editar/${id}`)
+      }
+
+      const detail = (id) =>{
+         location.assign(`http://localhost:8000/admin/produto-detalhe/ver/${id}`)
       }
    </script>
 @stop

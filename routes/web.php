@@ -45,6 +45,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
       Route::get('produto/editar/{id}','Admin\HomeAdminController@productEdit')->name('product.edit');
 
       Route::get('produto-detalhe','Admin\HomeAdminController@productDetail')->name('productDetail');
+      
+      Route::get('produto-detalhe/ver/{id}','Admin\HomeAdminController@productDetailShow')->name('productDetail.show');
+      
+      Route::get('produto-detalhe/editar/{id}','Admin\HomeAdminController@productDetailEdit')->name('productDetail.edit');
 
       Route::get('produto-detalhe/criar','Admin\HomeAdminController@productDetailCreate')->name('productDetail.create');
 

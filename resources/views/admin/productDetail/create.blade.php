@@ -21,12 +21,13 @@
             @endforeach
             
          </select>
+         
 
          <label for="ingredient" class="form-label">Ingredientes</label>
          <input type="text" class="form-control" id="ingredient">
 
          <label for="detail" class="form-label">Detalhes</label>
-         <input type="text" class="form-control" id="detail">
+         <input type="text" class="form-control" id="detail" value="{{ old('detail')}}">
          
       </div>
 

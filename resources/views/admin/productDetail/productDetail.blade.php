@@ -83,7 +83,7 @@
       }
 
       const edit = (id) =>{
-         location.assign(`http://localhost:8000/admin/produto/editar/${id}`)
+         location.assign(`http://localhost:8000/admin/produto-detalhe/editar/${id}`)
       }
    </script>
 @stop
