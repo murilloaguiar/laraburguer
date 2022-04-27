@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ProductDetailRequest extends FormRequest
 {
@@ -33,8 +34,8 @@ class ProductDetailRequest extends FormRequest
       return [
          'required' => 'Por favor forneça o valor do campo :attribute',
          'min' => 'O campo :attribute precisa ter pelo menos 3 caracteres',
-         'products_id.unique' => 'Já existe detalhes para este produto',
-         'products_id.exists' => 'O produto selecionado não está cadastrado',
+         'product_id.unique' => 'Já existe detalhes para este produto',
+         'product_id.exists' => 'O produto selecionado não está cadastrado',
          'integer' => 'Por favor informe um valor numérico para o campo :attribute'
       ];
    }
@@ -43,7 +44,7 @@ class ProductDetailRequest extends FormRequest
       return [
          'ingredients' => 'ingredientes',
          'details' => 'detalhes',
-         'products_id' => 'produto'
+         'product_id' => 'produto'
       ];
    }
 }

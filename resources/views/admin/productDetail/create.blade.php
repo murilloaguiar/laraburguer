@@ -63,7 +63,7 @@
             details
          }
 
-         console.log(JSON.stringify(data))
+         //console.log(JSON.stringify(data))
 
          const myHeaders = {
             method: 'POST',

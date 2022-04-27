@@ -39,7 +39,7 @@ class HomeAdminController extends Controller
 
    public function productDetailEdit($id){
       $productDetail = ProductDetail::find($id);
-      $products = Product::with(['category'])->orderBy('name')->get();
+      $products = Product::orderBy('name')->get();
       return view('admin.productDetail.edit',[
          'productDetail' => $productDetail,
          'products' => $products

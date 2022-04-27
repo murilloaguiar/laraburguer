@@ -15,29 +15,91 @@
          <select id="product_id" class="form-select form-control">
             <option value="" disabled>Selecione</option>
             @foreach ($products as $product)
-               @if ($product->product_id == $product->id)
-                  <option value="{{$product->id}}" selected>{{$product->name}}</option>
-               @else
-                  <option value="{{$product->id}}">{{$product->name}}</option>
-               @endif
-               
+              
+               <option value="{{$product->id}}" {{$productDetail->product_id == $product->id ? 'selected' : ''}}>{{$product->name}}</option>
+
             @endforeach
             
          </select>
+
+         <input type="hidden" id="id" value="{{$productDetail->id}}">
 
          <label for="ingredient" class="form-label">Ingredientes</label>
          <input type="text" class="form-control" id="ingredient" value="{{$productDetail->ingredients}}">
 
          <label for="detail" class="form-label">Detalhes</label>
-         <input type="text" class="form-control" id="detail" value="{{$productDetail->detail}}">
+         <input type="text" class="form-control" id="detail" value="{{$productDetail->details}}">
          
       </div>
 
-      <button class="btn btn-success" type="submit" id="submit">Cadastrar</button>
+      <button class="btn btn-success" id="submit">Atualizar</button>
 
       <a class="btn btn-secondary" href="{{url()->previous()}}">
          Voltar
       </a>
+
+      <div class="alert mt-3" role="alert" id="alert">
+         
+      </div>
        
    @endauth
+@stop
+
+@section('js')
+   <script>
+      const submit = document.querySelector('#submit')
+
+
+      submit.addEventListener('click', (event)=>{
+      
+         const product_id = document.querySelector('#product_id').value
+         const ingredients = document.querySelector('#ingredient').value
+         const details = document.querySelector('#detail').value
+         const id = document.querySelector('#id').value
+         const alert = document.querySelector('#alert')
+
+         //const form = new FormData()
+
+         //form.append('name', name)
+         const data = {
+            product_id,
+            ingredients,
+            details,
+         }
+
+         console.log(data)
+         const myHeaders = {
+            method: 'PUT',
+            headers: {
+               'Content-Type': 'application/json',
+               Accept: 'application/json'
+            },
+            body: JSON.stringify(data)
+            //body: form
+         }
+
+         
+         fetch(`http://localhost:8000/api/v1/productDetail/${id}`, myHeaders)
+         .then(response => response.json())
+         .then(data => {
+            console.log(data)
+            if(data.hasOwnProperty('errors')){
+               alert.classList.remove('alert-success')
+               alert.innerHTML = ''
+               alert.classList.add('alert-danger')
+               alert.innerHTML = Object.values(data.errors)
+            }else{
+               alert.classList.remove('alert-danger')
+               alert.innerHTML = ''
+               alert.classList.add('alert-success')
+               alert.innerHTML = `O produto foi atualizado`
+            }
+         })
+         .catch(error=>console.log(erro))
+         
+         
+      
+      })
+   </script>
+
 @stop
