@@ -13,7 +13,7 @@
 
       
       <div class="mb-3">
-         <label for="product_id" class="form-label">Produto</label>
+         <label for="product_id" class="form-label">Produtos sem detalhes</label>
          <select id="product_id" class="form-select form-control">
             <option value="" selected disabled>Selecione</option>
             @foreach ($products as $product)
@@ -88,7 +88,7 @@
                   alert.classList.remove('alert-danger')
                   alert.innerHTML = ''
                   alert.classList.add('alert-success')
-                  alert.innerHTML = `O produto ${data.name} foi cadastrado`
+                  alert.innerHTML = `O detalhe foi cadastrado`
                }
             })
             .catch(error=>console.log(error))

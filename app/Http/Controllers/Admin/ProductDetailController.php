@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ProductDetail;
 use App\Http\Requests\ProductDetailRequest;
+use App\Http\Requests\UpdateProductDetailRequest;
 
 class ProductDetailController extends Controller
 {
@@ -80,15 +81,15 @@ class ProductDetailController extends Controller
     * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(ProductDetailRequest $request, $id)
+   public function update(UpdateProductDetailRequest $request, $id)
    {
       $productDetail = ProductDetail::find($id);
       if ($productDetail == null) {
          return response()->json(['erro'=>'O detalhe procurado não existe'], 404);
       }
 
-      $productDetail->update($request->validated());
-      return response()->json($productDetail, 201);
+      $productDetail->update($request->safe()->only(['ingredients', 'details']));
+      return response()->json($productDetail, 200);
    }
 
    /**

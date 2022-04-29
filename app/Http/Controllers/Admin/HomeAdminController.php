@@ -38,16 +38,16 @@ class HomeAdminController extends Controller
    }
 
    public function productDetailEdit($id){
-      $productDetail = ProductDetail::find($id);
-      $products = Product::orderBy('name')->get();
+      $productDetail = ProductDetail::with(['product'])->find($id);
+      
       return view('admin.productDetail.edit',[
-         'productDetail' => $productDetail,
-         'products' => $products
+         'productDetail' => $productDetail
       ]);
    }
 
    public function productDetailCreate(){
-      $products = Product::with(['category'])->orderBy('name')->get();
+      $products = Product::all();
+      $products = $products->diff(Product::join('product_details', 'products.id', '=', 'product_details.product_id')->orderBy('products.name')->get());
       return view('admin.productDetail.create',[
          'products' => $products
       ]);

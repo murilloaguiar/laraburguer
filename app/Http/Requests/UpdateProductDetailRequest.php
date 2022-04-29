@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ProductDetailRequest extends FormRequest
+class UpdateProductDetailRequest extends FormRequest
 {
    /**
     * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class ProductDetailRequest extends FormRequest
       return [
          'ingredients' => 'nullable|min:3|max:300',
          'details' => 'required|min:3|max:400',
-         'product_id' => ['required',Rule::unique('product_details')->ignore($this->product_detail),'exists:products,id','integer']
+         'product_id' => ['required','exists:products,id','integer']
       ];
    }
 

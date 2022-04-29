@@ -13,12 +13,10 @@
       <div class="mb-3">
          <label for="product_id" class="form-label">Produto</label>
          <select id="product_id" class="form-select form-control">
-            <option value="" disabled>Selecione</option>
-            @foreach ($products as $product)
               
-               <option value="{{$product->id}}" {{$productDetail->product_id == $product->id ? 'selected' : ''}}>{{$product->name}}</option>
+            <option value="{{$productDetail->product_id}}" disabled selected>{{$productDetail->product->name}}</option>
 
-            @endforeach
+            
             
          </select>
 
