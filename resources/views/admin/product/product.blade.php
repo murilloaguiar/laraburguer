@@ -56,6 +56,8 @@
             @endforeach
          </tbody>
       </table>
+
+      {{$products->appends($request)->links()}}
    @endauth
 @stop
 

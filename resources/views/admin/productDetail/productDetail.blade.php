@@ -48,6 +48,7 @@
             @endforeach
          </tbody>
       </table>
+      {{$productsDetail->appends($request)->links()}}
    @endauth
 @stop
 

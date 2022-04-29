@@ -24,10 +24,11 @@ class HomeAdminController extends Controller
       ]);
    }
 
-   public function productDetail(){
-      $productsDetail = ProductDetail::with(['product'])->get();
+   public function productDetail(Request $request){
+      $productsDetail = ProductDetail::with(['product'])->paginate(10);
       return view('admin.productDetail.productDetail',[
-         'productsDetail' => $productsDetail
+         'productsDetail' => $productsDetail,
+         'request' => $request->all()
       ]);
    }
 
@@ -53,11 +54,12 @@ class HomeAdminController extends Controller
       ]);
    }
 
-   public function product(){
-      $products = Product::with(['category', 'productDetail'])->get();
+   public function product(Request $request){
+      $products = Product::with(['category', 'productDetail'])->orderBy('name')->paginate(5);
       //dd($products);
       return view('admin.product.product',[
-         'products' => $products
+         'products' => $products,
+         'request' => $request->all()
       ]);
    }
 
@@ -77,10 +79,11 @@ class HomeAdminController extends Controller
       ]);
    }
 
-   public function category(){
-      $categories = Category::orderBy('name')->get();
+   public function category(Request $request){
+      $categories = Category::orderBy('name')->paginate(5);
       return view('admin.category.category', [
-         'categories'=>$categories
+         'categories'=>$categories,
+         'request' => $request->all()
       ]);
    }
 

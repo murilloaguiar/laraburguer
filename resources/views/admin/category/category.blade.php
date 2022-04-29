@@ -45,6 +45,7 @@
          @endforeach
       </tbody>
    </table>
+   {{$categories->appends($request)->links()}}
    @endauth
 @stop
 
