@@ -67,7 +67,7 @@
             }
          }
 
-         fetch(`http://localhost:8000/api/v1/product/${id}`,myHeaders)
+         fetch(`http://localhost:8000/api/v1/productDetail/${id}`,myHeaders)
             .then(response => response.json())
             .then(data=>{
 

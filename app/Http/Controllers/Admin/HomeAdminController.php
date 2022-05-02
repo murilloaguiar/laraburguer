@@ -47,8 +47,9 @@ class HomeAdminController extends Controller
    }
 
    public function productDetailCreate(){
-      $products = Product::all();
-      $products = $products->diff(Product::join('product_details', 'products.id', '=', 'product_details.product_id')->orderBy('products.name')->get());
+      
+      $products = Product::leftJoin('product_details', 'products.id', '=', 'product_details.product_id')->select('products.name','products.id')->whereNull('product_details.details')->get();
+      //dd($products);
       return view('admin.productDetail.create',[
          'products' => $products
       ]);
