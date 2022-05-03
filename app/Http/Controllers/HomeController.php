@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 /**
  * Renderiza as views do front end
@@ -36,13 +38,14 @@ class HomeController extends Controller
       //dd($request->pesquisa);
       if ($request->pesquisa) $products = Product::with(['category'])->orderBy('name')->where('name', 'like' ,'%'.$request->pesquisa.'%')->get();
       else if ($request->categoria) $products = Product::with(['category'])->orderBy('name')->where('category_id', $request->categoria)->get();
-      else $products = Product::with(['category'])->orderBy('name')->get();
+      else $products = Product::with(['category','photos'])->orderBy('name')->get();
 
+      //dd(($products[9]->photos->isEmpty()));
       $categories = Category::orderBy('name')->get();
       
       return view('site.catalogo', [
-         'products'=>$products,
-         'categories'=>$categories
+         'products'=> $products,
+         'categories'=> $categories,
       ]);
    }
 

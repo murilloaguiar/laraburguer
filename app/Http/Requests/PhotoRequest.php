@@ -24,7 +24,7 @@ class PhotoRequest extends FormRequest
    public function rules()
    {
       return [
-         'image' => 'required|file|max:2048',
+         'image' => 'required|max:2048',
          'product_id'=> 'required|exists:products,id'
       ];
    }

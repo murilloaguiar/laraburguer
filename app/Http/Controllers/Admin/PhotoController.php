@@ -35,7 +35,16 @@ class PhotoController extends Controller
     */
    public function store(PhotoRequest $request)
    {
-      dd($request->validated());
+      //dd($request->image);
+      $photo = new Photo();
+      //dd($request->image[0]);
+      $image = $request->image;
+      $image_urn = $image->store('product_images','public');
+      $photo = $photo->create([
+         'product_id' => $request->product_id,
+         'image' => $image_urn
+      ]);
+      return response()->json($photo, 201);
    }
 
    /**

@@ -22,6 +22,7 @@
                <th scope="col">Categoria</th>
                <th scope="col">Editar</th>
                <th scope="col">Detalhes</th>
+               <th scope="col">Fotos</th>
                <th scope="col">Excluir</th>
             </tr>
          </thead>
@@ -48,6 +49,10 @@
                   @else
                      <td>Sem detalhes</td>
                   @endif
+
+                  <td>
+                     <button onclick="photo({{$product->id}})" class="btn btn-outline-secondary"><i class="fas fa-solid fa-image"></i></button>
+                  </td>
                
                   <td>
                      <button onclick="remove({{$product->id}})" class="btn btn-outline-danger delete"><i class="fas fa-solid fa-trash"></i></button>

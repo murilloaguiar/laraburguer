@@ -32,7 +32,9 @@
                      <li><a class="dropdown-item" href="{{route('user.profile')}}">Perfil</a></li>
                      <li><a class="dropdown-item" href="#">Endereços</a></li>
                      <li><hr class="dropdown-divider"></li>
-                     <li><a class="dropdown-item" href="{{route('logout')}}">Sair</a></li>
+                     <form action="{{route('logout')}}" method="post">
+                        <li><button type="submit" class="dropdown-item">Sair</button></li>
+                     </form>
                   </ul>
                 </li>
                   
