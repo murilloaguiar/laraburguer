@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -42,7 +44,18 @@ class ProductController extends Controller
    public function store(ProductRequest $request)
    {
       //dd($request);
-      $product = Product::create($request->validated());
+      $request->validated();
+
+      $image = $request->cover_photo;
+      $image_urn = $image->store('cover_photo_product','public');
+
+      $product = Product::create([
+         'name' => $request->name,
+         'price' => $request->price,
+         'status' => $request->status,
+         'cover_photo' => $image_urn,
+         'category_id' => $request->category_id
+      ]);
       return response()->json($product, 201);
    }
 
@@ -83,13 +96,33 @@ class ProductController extends Controller
     */
    public function update(ProductRequest $request, $id)
    {
+      //dd($request);
       $product = Product::find($id);
       //dd($product);
       if ($product === null) {
          return response()->json(['erro'=> 'O recurso não existe'], 404);
       }
+      
+      // $product->fill($request->validated());
+      // $product->save();
 
-      $product->update($request->validated());
+      // Storage::disk('public')->delete($product->cover_photo);
+         
+      
+      // $image = $request->cover_photo;
+      // $image_urn = $image->store('cover_photo_product','public');
+
+      // $product->cover_photo = $image_urn;
+   
+      $product->fill([
+         'name' => $request->name,
+         'price' => $request->price,
+         'status' => $request->status,
+         
+         'category_id' => $request->category_id
+      ]);
+
+      
 
       return response()->json($product, 200);
       

@@ -9,7 +9,7 @@ class Product extends Model
 {
    use HasFactory;
 
-   protected $fillable = ['name','price','status','category_id'];
+   protected $fillable = ['name','price','status','category_id','cover_photo'];
 
    public function productDetail(){
       return $this->hasOne('App\Models\ProductDetail','product_id','id');

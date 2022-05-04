@@ -26,6 +26,7 @@ class ProductRequest extends FormRequest
          'name' => 'required|min:3|max:150',
          'price'=> 'required|numeric',
          'status'=> 'required|numeric',
+         'cover_photo' => 'mimes:jpg,jpeg,png|max:1024|file',
          'category_id' => 'required|exists:categories,id'
       ];
    }
@@ -36,6 +37,8 @@ class ProductRequest extends FormRequest
          'numeric' => 'O campo :attribute precisa ser do tipo numérico',
          'name.min'=> 'O campo nome não pode conter menos que 3 strings',
          'name.max' => 'O nome do produto não pode ser maior do que 150 caracteres',
+         'cover_photo.mimes' => 'A foto precisa estar em um formato jpg, jpeg ou png',
+         'cover_photo.max' => 'A foto precisa ser menor que 1MB',
          'category_id.exists' => 'Essa categoria não está disponível na base de dados'
       ];
    }
@@ -44,7 +47,8 @@ class ProductRequest extends FormRequest
       return [
          'name' => 'Nome',
          'price' => 'Preço',
-         'category_id' => 'Categoria'
+         'category_id' => 'Categoria',
+         'cover_photo' => 'foto de capa'
       ];
    }
 }
