@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/catalogo','HomeController@catalog')->name('catalog');
+Route::get('/catalogo/produto/{product}','HomeController@catalogShowProduct')->name('catalog.product');
 Route::get('/carrinho','HomeController@bag')->name('bag');
 
 

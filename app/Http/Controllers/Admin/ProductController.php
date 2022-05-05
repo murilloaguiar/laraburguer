@@ -30,8 +30,7 @@ class ProductController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-   public function create()
-   {
+   public function create(){
       
    }
 
@@ -41,8 +40,7 @@ class ProductController extends Controller
     * @param  App\Http\Requests\ProductRequest  $request
     * @return \Illuminate\Http\Response
     */
-   public function store(ProductRequest $request)
-   {
+   public function store(ProductRequest $request){
       //dd($request);
       $request->validated();
 
@@ -65,9 +63,8 @@ class ProductController extends Controller
     * @param  \App\Models\Product  $product
     * @return \Illuminate\Http\Response
     */
-   public function show($id)
-   {
-      $product = Product::with(['category','productDetail'])->find($id);
+   public function show($id){
+      $product = Product::with(['category','productDetail','photos'])->find($id);
       //dd($product);
       if ($product === null) {
          return response()->json(['erro'=>'O produto procurado não existe'], 404);
@@ -94,9 +91,8 @@ class ProductController extends Controller
     * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function update(ProductRequest $request, $id)
-   {
-      //dd($request);
+   public function update(Request $request, $id){
+      //dd($request->name);
       $product = Product::find($id);
       //dd($product);
       if ($product === null) {
@@ -106,19 +102,19 @@ class ProductController extends Controller
       // $product->fill($request->validated());
       // $product->save();
 
-      // Storage::disk('public')->delete($product->cover_photo);
+      Storage::disk('public')->delete($product->cover_photo);
          
       
-      // $image = $request->cover_photo;
-      // $image_urn = $image->store('cover_photo_product','public');
+      $image = $request->cover_photo;
+      $image_urn = $image->store('cover_photo_product','public');
 
       // $product->cover_photo = $image_urn;
    
-      $product->fill([
+      $product->update([
          'name' => $request->name,
          'price' => $request->price,
          'status' => $request->status,
-         
+         'cover_photo' => $image_urn,
          'category_id' => $request->category_id
       ]);
 

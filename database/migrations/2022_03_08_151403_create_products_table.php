@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
          $table->id();
          $table->unsignedBigInteger('category_id')->nullable();
          $table->string('name',150);
-         $table->string('cover_photo',255)->nullable(); 
+         $table->string('cover_photo',255); 
          $table->float('price',5,2)->default(0.01);
          $table->integer('status')->default(1);
          $table->timestamps();

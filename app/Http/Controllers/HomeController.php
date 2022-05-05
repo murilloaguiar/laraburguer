@@ -49,6 +49,16 @@ class HomeController extends Controller
       ]);
    }
 
+   public function catalogShowProduct($id){
+
+      $product = Product::with(['category', 'productDetail','photos'])->find($id);
+      
+      return view('site.catalogo-product', [
+         'product'=> $product,
+         
+      ]);
+   }
+
    public function bag(){
       return view('site.carrinho');
    }

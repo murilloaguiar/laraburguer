@@ -59,10 +59,10 @@
          @foreach ($products as $product)
 
             <div class="col">
-               <a href="">
-                  <div class="card">
+               <a href="{{route('catalog.product',['product'=>$product->id])}}">
+                  <div class="card h-100">
  
-                     <img src="{{$product->photos->isEmpty() ? 'img/lanche-capa.jpg': 'storage/'.$product->photos[0]->image}}" class="card-img-top" alt="...">
+                     <img src="{{'storage/'.$product->cover_photo}}" class="card-img-top" alt="...">
                      
                      <div class="card-body">
                         <h5 class="card-title">{{$product->name}}</h5>
