@@ -48,7 +48,7 @@ class HomeAdminController extends Controller
 
    public function productDetailCreate(){
       
-      $products = Product::leftJoin('product_details', 'products.id', '=', 'product_details.product_id')->select('products.name','products.id')->whereNull('product_details.details')->get();
+      $products = Product::leftJoin('product_details', 'products.id', '=', 'product_details.product_id')->select('products.name','products.id')->whereNull('product_details.details')->orderBy('name')->get();
       //dd($products);
       return view('admin.productDetail.create',[
          'products' => $products
@@ -77,6 +77,14 @@ class HomeAdminController extends Controller
       return view('admin.product.edit',[
          'product'=>$product,
          'categories'=>$categories
+      ]);
+   }
+
+   public function productPhotos($id){
+      $product = Product::with(['photos'])->find($id);
+      //dd($product);
+      return view('admin.product.photo',[
+         'product'=>$product,
       ]);
    }
 

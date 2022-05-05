@@ -45,6 +45,8 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
       Route::get('produto/editar/{id}','Admin\HomeAdminController@productEdit')->name('product.edit');
 
+      Route::get('produto/{id}/fotos','Admin\HomeAdminController@productPhotos')->name('product.fotos');
+
       Route::get('produto-detalhe','Admin\HomeAdminController@productDetail')->name('productDetail');
       
       Route::get('produto-detalhe/ver/{id}','Admin\HomeAdminController@productDetailShow')->name('productDetail.show');

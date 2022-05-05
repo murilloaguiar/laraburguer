@@ -84,11 +84,17 @@ class PhotoController extends Controller
    /**
     * Remove the specified resource from storage.
     *
-    * @param  \App\Models\Photo  $photo
+    * @param  $id
     * @return \Illuminate\Http\Response
     */
-   public function destroy(Photo $photo)
-   {
-      //
+   public function destroy($id){
+      $photo = Photo::find($id);
+
+      if ($photo === null) {
+         return response()->json(['erro'=> 'O recurso não existe'], 404);
+      }
+
+      $photo->delete();
+      return response()->json(['mensagem'=>'Removido com sucesso']);
    }
 }

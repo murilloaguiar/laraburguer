@@ -104,5 +104,9 @@
       const detail = (id) =>{
          location.assign(`http://localhost:8000/admin/produto-detalhe/ver/${id}`)
       }
+
+      const photo = (id) =>{
+         location.assign(`http://localhost:8000/admin/produto/${id}/fotos`)
+      }
    </script>
 @stop

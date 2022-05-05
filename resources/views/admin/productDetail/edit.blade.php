@@ -11,15 +11,11 @@
 
    @auth('admin')
       <div class="mb-3">
-         <label for="product_id" class="form-label">Produto</label>
-         <select id="product_id" class="form-select form-control">
-              
-            <option value="{{$productDetail->product_id}}" disabled selected>{{$productDetail->product->name}}</option>
+         <label for="product" class="form-label">Produto</label>
+         <input id="product" class="form-select form-control" readonly value="{{$productDetail->product->name}}">
 
-            
-            
-         </select>
-
+         <input id="product_id" type="hidden" value="{{$productDetail->product->id}}">
+     
          <input type="hidden" id="id" value="{{$productDetail->id}}">
 
          <label for="ingredient" class="form-label">Ingredientes</label>
