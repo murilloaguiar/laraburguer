@@ -59,7 +59,7 @@ class HomeController extends Controller
       ]);
    }
 
-   public function bag(){
+   public function cart(){
       return view('site.carrinho');
    }
 

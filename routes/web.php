@@ -21,7 +21,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::get('/catalogo','HomeController@catalog')->name('catalog');
 Route::get('/catalogo/produto/{product}','HomeController@catalogShowProduct')->name('catalog.product');
-Route::get('/carrinho','HomeController@bag')->name('bag');
+Route::get('/carrinho','HomeController@cart')->name('cart');
 
 
 Route::middleware('auth')->prefix('user')->name('user.')->group(function(){

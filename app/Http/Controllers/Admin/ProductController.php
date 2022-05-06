@@ -17,7 +17,7 @@ class ProductController extends Controller
     */
    public function index()
    {
-      $product = Product::with(['category','productDetail'])->get();
+      $product = Product::with(['category','productDetail','photos'])->get();
       
       if (count($product)==0) {
          return response()->json(['erro'=>'Não existem produtos cadastrados'], 404);

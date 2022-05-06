@@ -19,7 +19,7 @@
                <a class="nav-link" href="{{route('user.order')}}">Meus Pedidos</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="{{route('bag')}}">Carrinho</a>
+               <a class="nav-link" href="{{route('cart')}}">Carrinho</a>
             </li>
 
             @auth('web')

@@ -68,12 +68,15 @@
                         <h5 class="card-title">{{$product->name}}</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p class="card-text"><small class="text-muted">Categoria: {{$product->category->name}}</small></p>
+               </a>
+                        <button onclick="addCart({{$product->id}})" class="btn btn-outline-info submit" id="{{$product->id}}">Adicionar ao carrinho</button>
                      </div>
                      <div class="card-footer">
-                        Preço: R$ {{$product->price}}
+                        <p>Preço: R$ {{$product->price}}</p> 
+                        
                      </div>
                   </div>
-               </a>
+               
             </div>
 
          @endforeach
@@ -81,6 +84,58 @@
       </div>
    </section>
    
-
-
 @endsection
+
+@section('js')
+
+   <script>
+
+      const buttons = document.querySelectorAll('.submit')
+      //console.log(buttons)
+      const products = JSON.parse(localStorage.getItem('products')) ?? []
+
+      buttons.forEach(button =>{
+         
+         products.forEach(product => {
+            if(button.id == product.id) button.innerHTML = 'Remover do carrinho'
+         });
+      })
+         
+      
+      const addCart = (id)=>{
+
+         const button = document.getElementById(id)
+        
+         if (button.innerHTML == 'Remover do carrinho') {
+            products.map((product, index)=>{
+               if(product.id==id){
+                  products.splice(index, 1)
+               }
+            })
+            
+            localStorage.setItem('products', JSON.stringify(products))
+            
+            button.innerHTML = 'Adicionar ao carrinho'
+
+         }else if(button.innerHTML == 'Adicionar ao carrinho') {
+            products.push({
+               id
+            })
+
+            localStorage.setItem('products', JSON.stringify(products))
+
+            
+            //console.log(button)
+            button.innerHTML = 'Remover do carrinho'
+         }
+        
+         //console.log(products)
+
+         
+      }
+
+
+
+   </script>
+
+@stop

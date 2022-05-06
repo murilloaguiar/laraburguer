@@ -26,5 +26,8 @@
 
    @include('site.layouts._partials.rodape')
 
+
+   @yield('js')
+
 </body>
 </html>
