@@ -1,0 +1,7 @@
+#header-cart{
+   width: 100vw;
+   height: 50vh;
+   background-image: url('../img/carrinho-capa.jpg');
+   background-position: center;
+   background-size: cover;
+}
