@@ -58,7 +58,7 @@ class HomeAdminController extends Controller
 
    //----------Product----------
    public function product(Request $request){
-      $products = Product::with(['category', 'productDetail'])->orderBy('name')->paginate(5);
+      $products = Product::with(['category', 'productDetail'])->orderBy('name')->paginate(10);
       //dd($products);
       return view('admin.product.product',[
          'products' => $products,
@@ -102,7 +102,7 @@ class HomeAdminController extends Controller
 
    //----------Category----------
    public function category(Request $request){
-      $categories = Category::orderBy('name')->paginate(5);
+      $categories = Category::orderBy('name')->paginate(10);
       return view('admin.category.category', [
          'categories'=>$categories,
          'request' => $request->all()

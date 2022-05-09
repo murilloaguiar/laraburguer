@@ -17,6 +17,9 @@
          <label for="name" class="form-label">Nome do produto</label>
          <input type="text" class="form-control" id="name">
 
+         <label for="cover_photo" class="form-label">Foto de capa</label>
+         <input type="file" id="cover_photo">
+         <br>
          <label for="price" class="form-label">Preço</label>
          <input type="text" class="form-control" id="price">
 
@@ -61,28 +64,34 @@
          
          const name = document.querySelector('#name').value
          const price = document.querySelector('#price').value
+         const cover_photo = document.querySelector('#cover_photo').files[0]
          const status = document.querySelector('#status').value
          const category_id = document.querySelector('#category_id').value
          const alert = document.querySelector('#alert')
 
-         //const form = new FormData()
+         const form = new FormData()
 
-         //form.append('name', name)
-         const data = {
-            name,
-            price,
-            status,
-            category_id
-         }
+         form.append('name', name)
+         form.append('price', price)
+         form.append('cover_photo', cover_photo)
+         form.append('status', status)
+         form.append('category_id', category_id)
+   
+         // const data = {
+         //    name,
+         //    price,
+         //    status,
+         //    category_id
+         // }
 
          const myHeaders = {
             method: 'POST',
             headers: {
-               'Content-Type': 'application/json',
+               //'Content-Type': 'application/json',
                Accept: 'application/json'
             },
-            body: JSON.stringify(data)
-            //body: form
+            //body: JSON.stringify(data)
+            body: form
          }
 
          fetch('http://localhost:8000/api/v1/product', myHeaders)
