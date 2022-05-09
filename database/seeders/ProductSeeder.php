@@ -21,7 +21,7 @@ class ProductSeeder extends Seeder
             'name' => $product,
             'price' => rand(5,20),
             'category_id' => rand(1,10),
-            'cover_photo' => 'cover_photo_product/lanche-capa.jpg',
+            'cover_photo' => 'default/lanche-capa.jpg',
             'status' => 1
          ]);
       }

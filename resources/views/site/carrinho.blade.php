@@ -46,7 +46,7 @@
                .then(data=>{
                   const li = document.createElement('li')
                   li.className = "list-group-item"
-                  li.innerHTML = data.name
+                  li.innerHTML = `<img src="storage/${data.cover_photo}" width="250px"> ${data.name}`
                   li.id = `product_${product.id}`
 
                   const button = document.createElement('button')

@@ -66,7 +66,7 @@
                      
                      <div class="card-body">
                         <h5 class="card-title">{{$product->name}}</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text">{{$product->productDetail == null ? '' : $product->productDetail->details}}</p>
                         <p class="card-text"><small class="text-muted">Categoria: {{$product->category->name}}</small></p>
                </a>
                         <button onclick="addCart({{$product->id}})" class="btn btn-outline-info submit" id="{{$product->id}}">Adicionar ao carrinho</button>

@@ -36,10 +36,11 @@ class HomeController extends Controller
    public function catalog(Request $request){
 
       //dd($request->pesquisa);
-      if ($request->pesquisa) $products = Product::with(['category'])->orderBy('name')->where('name', 'like' ,'%'.$request->pesquisa.'%')->get();
-      else if ($request->categoria) $products = Product::with(['category'])->orderBy('name')->where('category_id', $request->categoria)->get();
-      else $products = Product::with(['category','photos'])->orderBy('name')->get();
+      if ($request->pesquisa) $products = Product::with(['category','photos','productDetail'])->orderBy('name')->where('name', 'like' ,'%'.$request->pesquisa.'%')->get();
+      else if ($request->categoria) $products = Product::with(['category','photos','productDetail'])->orderBy('name')->where('category_id', $request->categoria)->get();
+      else $products = Product::with(['category','photos','productDetail'])->orderBy('name')->get();
 
+      //dd($products[0]->ProductDetail);
       //dd(($products[9]->photos->isEmpty()));
       $categories = Category::orderBy('name')->get();
       
