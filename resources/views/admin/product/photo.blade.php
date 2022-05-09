@@ -8,7 +8,7 @@
 
 @section('content')
    @auth('admin')
-      <a class="btn btn-success mb-4" href="{{route('admin.product.create')}}">
+      <a class="btn btn-success mb-4" href="{{route('admin.photo.create',['productId'=>$product->id])}}">
          Cadastrar Fotos
       </a>
       <h4 id="alert" class="text-danger"></h4>

@@ -25,20 +25,27 @@ Route::get('/carrinho','HomeController@cart')->name('cart');
 
 
 Route::middleware('auth')->prefix('user')->name('user.')->group(function(){
+
    Route::get('/pedido','HomeController@orders')->name('order');
+
    Route::get('perfil', 'User\HomeUserController@index')->name('profile');
 });
 
 //--------Rotas do administrador
 //--------Responsáveis por retornar as views com os componentes que são requeridos
 Route::prefix('admin')->name('admin.')->group(function(){
+
    Route::get('login','AuthAdmin\LoginController@showLoginForm')->name('login');
+
    Route::post('login','AuthAdmin\LoginController@login')->name('login');
 
    Route::middleware('auth:admin')->group(function(){
+
       Route::get('/','Admin\HomeAdminController@index')->name('index');
+
       Route::get('pedido','Admin\HomeAdminController@order')->name('order');
 
+      //-------------Products-------------
       Route::get('produto','Admin\HomeAdminController@product')->name('product');
 
       Route::get('produto/criar','Admin\HomeAdminController@productCreate')->name('product.create');
@@ -47,6 +54,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
       Route::get('produto/{id}/fotos','Admin\HomeAdminController@productPhotos')->name('product.fotos');
 
+      //-------------Photos-------------
+      Route::get('foto/produto/{productId}/adicionar','Admin\HomeAdminController@photoCreate')->name('photo.create');
+
+      //-------------Products details-------------
       Route::get('produto-detalhe','Admin\HomeAdminController@productDetail')->name('productDetail');
       
       Route::get('produto-detalhe/ver/{id}','Admin\HomeAdminController@productDetailShow')->name('productDetail.show');
@@ -55,6 +66,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
       Route::get('produto-detalhe/criar','Admin\HomeAdminController@productDetailCreate')->name('productDetail.create');
 
+      //-------------Category-------------
       Route::get('categoria','Admin\HomeAdminController@category')->name('category');
 
       Route::get('categoria/criar','Admin\HomeAdminController@categoryCreate')->name('category.create');

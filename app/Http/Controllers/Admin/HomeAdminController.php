@@ -24,6 +24,7 @@ class HomeAdminController extends Controller
       ]);
    }
 
+   //----------Product Details----------
    public function productDetail(Request $request){
       $productsDetail = ProductDetail::with(['product'])->paginate(10);
       return view('admin.productDetail.productDetail',[
@@ -55,6 +56,7 @@ class HomeAdminController extends Controller
       ]);
    }
 
+   //----------Product----------
    public function product(Request $request){
       $products = Product::with(['category', 'productDetail'])->orderBy('name')->paginate(5);
       //dd($products);
@@ -88,6 +90,17 @@ class HomeAdminController extends Controller
       ]);
    }
 
+   //----------Category----------
+   public function photoCreate($id){
+      $product = Product::find($id);
+      //dd($product);
+      return view('admin.photo.create',[
+         'id'=>$product->id,
+         'name'=>$product->name
+      ]);
+   }
+
+   //----------Category----------
    public function category(Request $request){
       $categories = Category::orderBy('name')->paginate(5);
       return view('admin.category.category', [
