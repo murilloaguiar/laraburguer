@@ -17,6 +17,8 @@
    
 </ul>
 
+<button class="btn btn-success" id="order">Finalizar Pedido</button>
+
 
 @endsection
 
@@ -73,6 +75,14 @@
 
          });
       }
+
+      const order = document.querySelector('#order')
+      let user_id = ''
+      order.addEventListener('click', async()=>{
+         await fetch('http://localhost:8000/getUserId')
+            .then(response=>response.json())
+            .then(data=>console.log(data))
+      })
 
 
 

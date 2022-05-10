@@ -15,4 +15,8 @@ class HomeUserController extends Controller{
    public function index(){
       return 'bem vindo '.Auth::user()->name;
    }
+
+   public function getUserId(){
+      return response()->json(auth()->user()->id);
+   }
 }

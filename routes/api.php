@@ -28,4 +28,5 @@ Route::prefix('v1')->group(function(){
    Route::apiResource('product','Admin\ProductController');
    Route::apiResource('productDetail','Admin\ProductDetailController');
    Route::apiResource('photo','Admin\PhotoController');
+   Route::get('getUserId', 'User\UserController@getUserId')->name('api.userId');
 });

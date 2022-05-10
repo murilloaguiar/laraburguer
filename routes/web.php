@@ -22,7 +22,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/catalogo','HomeController@catalog')->name('catalog');
 Route::get('/catalogo/produto/{product}','HomeController@catalogShowProduct')->name('catalog.product');
 Route::get('/carrinho','HomeController@cart')->name('cart');
-
+Route::get('/getUserId', 'User\HomeUserController@getUserId')->name('userId');
 
 Route::middleware('auth')->prefix('user')->name('user.')->group(function(){
 
